@@ -1,0 +1,1155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xml:base="localhost://">
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#16">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">17.82</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#31">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#4">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">19.44</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#3">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">93</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#6">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#17">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#10">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#22">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#1">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">16.46</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#11">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">17.8</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#16">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10.4</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#12">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">180</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#21">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">21.5</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#8">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#31">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">301</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#29">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#18">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Fiat 128</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#19">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">75.7</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#17">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#21">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.7</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#20">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#16">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">215</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#3">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#22">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">16.87</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#24">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Camaro Z28</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#27">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#29">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.22</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#31">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.54</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#23">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.15</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#11">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#2">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#11">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">167.6</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#32">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#29">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#2">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.9</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#19">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#20">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">19.9</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#25">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.845</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#14">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#7">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#9">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">22.9</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#29">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15.8</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#23">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">17.3</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#20">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#29">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">351</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#25">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">17.05</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#7">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.57</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#24">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.84</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#2">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">160</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#7">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">245</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#13">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">17.3</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#24">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">350</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#16">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#30">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.77</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#4">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#18">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#7">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">14.3</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#27">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#18">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#31">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">14.6</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#26">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Fiat X1-9</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#8">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Merc 240D</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#5">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Hornet Sportabout</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#4">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">21.4</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#29">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#20">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#26">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#3">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#18">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.08</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#30">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15.5</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#26">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#24">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#30">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">175</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#13">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#29">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#21">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">120.1</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#20">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#26">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">18.9</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#30">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Ferrari Dino</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#15">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#26">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">79</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#1">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.62</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#16">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">460</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#1">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#6">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">18.1</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#23">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#17">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#27">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#10">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">167.6</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#14">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#22">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.52</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#10">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">18.3</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#7">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#23">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">304</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#13">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.73</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#2">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">21</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#30">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">145</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#11">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#27">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">120.3</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#23">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#1">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#8">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.69</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#28">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">113</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#6">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.76</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#30">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#7">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15.84</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#3">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Datsun 710</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#3">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#9">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">22.8</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#32">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">21.4</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#21">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Toyota Corona</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#11">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#27">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#26">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#25">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#10">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">123</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#22">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15.5</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#29">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">14.5</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#27">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.43</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#17">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.345</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#10">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#3">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#17">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">17.42</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#21">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">97</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#29">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Ford Pantera L</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#22">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">150</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#26">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#13">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#23">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#8">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#31">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.57</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#20">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.835</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#4">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.215</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#8">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">146.7</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#23">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">150</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#24">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#32">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">109</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#31">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Maserati Bora</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#32">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">18.6</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#5">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#17">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">14.7</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#32">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#2">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.875</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#6">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.46</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#16">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.424</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#12">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#4">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.08</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#31">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#15">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.93</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#2">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#30">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#8">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">24.4</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#30">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#26">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">66</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#5">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#32">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">121</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#2">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">110</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#12">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.07</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#3">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.32</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#27">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#19">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">18.52</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#30">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">19.7</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#16">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#8">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">20</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#8">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.19</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#7">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Duster 360</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#1">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">21</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#17">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Chrysler Imperial</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#7">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#1">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">110</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#19">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#31">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#9">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.92</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#14">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">180</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#2">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#28">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.513</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#14">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.07</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#19">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.93</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#9">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">140.8</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#2">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#19">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">52</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#6">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#6">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Valiant</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#13">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">180</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#28">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#9">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Merc 230</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#6">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">225</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#21">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#5">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#10">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.44</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#32">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.11</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#8">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#16">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#17">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">440</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#24">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">245</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#4">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#6">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#19">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#10">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Merc 280</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#12">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#26">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.935</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#6">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#13">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">275.8</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#13">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.07</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#7">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#19">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Honda Civic</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#30">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#19">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">30.4</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#22">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.76</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#3">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#28">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">30.4</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#5">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.15</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#16">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#3">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">108</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#25">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">19.2</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#18">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#30">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#14">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#10">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#15">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.25</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#13">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#22">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#4">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#32">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#31">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#31">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">335</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#15">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#32">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.78</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#6">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#3">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">18.61</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#18">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">78.7</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#12">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#16">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Lincoln Continental</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#11">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.92</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#12">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">17.4</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#7">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">360</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#14">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.78</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#19">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#27">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">26</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#25">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">175</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#6">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">20.22</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#18">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">19.47</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#30">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.62</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#31">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#17">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#4">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">110</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#2">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">17.02</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#2">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Mazda RX4 Wag</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#27">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.14</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#6">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">105</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#24">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15.41</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#9">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">95</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#25">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">400</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#17">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#15">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">17.98</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#4">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#28">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">95.1</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#19">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.615</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#14">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">18</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#16">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#23">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15.2</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#12">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">16.4</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#5">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.44</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#25">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.08</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#2">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#27">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">91</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#24">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#13">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Merc 450SL</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#15">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10.4</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#15">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">205</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#1">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.9</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#8">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#17">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">230</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#23">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.435</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#14">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15.2</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#7">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#25">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#28">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">16.9</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#27">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Porsche 914-2</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#12">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#20">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Toyota Corolla</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#16">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#21">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#8">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">62</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#21">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#4">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#1">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Mazda RX4</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#25">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#28">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#22">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#18">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#18">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#11">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Merc 280C</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#25">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#4">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">258</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#12">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">275.8</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#12">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.07</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#11">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#18">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.2</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#1">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#19">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#14">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#1">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#22">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#14">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">275.8</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#24">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#3">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.85</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#24">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.73</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#21">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">20.01</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#18">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">32.4</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#17">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.23</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#5">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">17.02</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#28">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#10">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#32">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#28">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#13">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#5">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">175</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#23">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#29">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.17</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#9">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#3">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">22.8</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#14">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#11">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">123</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#26">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">27.3</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#5">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#27">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">16.7</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#15">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#12">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#22">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">318</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#22">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#14">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Merc 450SLC</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#15">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">472</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#24">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#29">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">264</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#20">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">33.9</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#26">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#20">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#20">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">71.1</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#31">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#29">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#11">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">18.9</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#11">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#15">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Cadillac Fleetwood</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#1">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">160</ns0:disp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#13">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#28">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Lotus Europa</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#25">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#20">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">65</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#20">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.22</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#22">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Dodge Challenger</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#21">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.465</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#10">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.92</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#4">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Hornet 4 Drive</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#9">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#26">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.08</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#18">
+    <ns0:hp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">66</ns0:hp>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#10">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">19.2</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#24">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">13.3</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#15">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#21">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#8">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#9">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#9">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#9">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.15</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#7">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.21</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#32">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#25">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Pontiac Firebird</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#28">
+    <ns0:am xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:am>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#11">
+    <ns0:wt xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.44</ns0:wt>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#32">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Volvo 142E</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#21">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#1">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#5">
+    <ns0:mpg xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">18.7</ns0:mpg>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#23">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">AMC Javelin</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#9">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#12">
+    <ns0:model xmlns:ns0="http://e-rum2020_example.com/mtcars#">Merc 450SE</ns0:model>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#5">
+    <ns0:carb xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</ns0:carb>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#28">
+    <ns0:drat xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.77</ns0:drat>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#13">
+    <ns0:qsec xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">17.6</ns0:qsec>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#10">
+    <ns0:cyl xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6</ns0:cyl>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#15">
+    <ns0:gear xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</ns0:gear>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#23">
+    <ns0:vs xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</ns0:vs>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://e-rum2020_example.com/mtcars#5">
+    <ns0:disp xmlns:ns0="http://e-rum2020_example.com/mtcars#" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">360</ns0:disp>
+  </rdf:Description>
+</rdf:RDF>

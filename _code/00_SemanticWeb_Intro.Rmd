@@ -1,0 +1,847 @@
+---
+title: e-Rum2020 - Semantic Web in R for Data Scientists
+author:
+  name: Goran S. Milovanović, Phd
+  affiliation: DataKolektiv, Chief Scientist & Owner, Wikimedia Deutschland, Data Scientist
+date: "`r format(Sys.time(), '%Y %m %d')`"
+abstract: 
+output:
+  html_notebook:
+    code_folding: show
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+    toc_depth: 5
+  html_document:
+    toc: yes
+    toc_depth: 5
+---
+
+[![](img/DK_Logo_100.png)](https://www.datakolektiv.com)
+
+***
+# Notebook 00: Intro to Semantic Web in R for Data Scientists
+
+**Feedback** should be send to `goran.milovanovic@datakolektiv.com`. 
+
+These notebooks accompany the e-Rum2020: Semantic Web in R for Data Scientists Workshop, 2020/06/20.
+
+**To obtain these notebooks:** `git clone` [datakolektiv/e-Rum2020_SemanticWeb](https://github.com/datakolektiv/e-Rum2020_SemanticWeb).
+
+***
+
+## 0. Prerequisites/Installations
+
+We have some installations to complete first. This should take no time at all.
+
+### 0.1 Install {rdflib} + dependencies
+
+For **Ubuntu/Debian**, open the terminal and install `librdf0-dev`:
+
+`sudo apt-get install librdf0-de`
+
+so that {rdflib} can rely on [{redland}](https://cran.r-project.org/web/packages/redland/index.html) - an R interface to the [Redland RDF C library](http://librdf.org/docs/api/index.html).
+
+Then: `install.packages('rdflib')` from your R session. Also, please `install.packages('jsonld')` - the [{jsonld}](https://cran.r-project.org/web/packages/jsonld/index.html) package that parses [JSON-LD](https://en.wikipedia.org/wiki/JSON-LD), a semantic web flavour of [JSON](https://en.wikipedia.org/wiki/JSON) (JSON-LD == JSON for Linked Data).
+
+### [OPTIONAL] 0.2 Install {rrdf} + dependencies
+ 
+Following the instructions from [https://github.com/egonw/rrdf](https://github.com/egonw/rrdf)
+
+You will need [{devtools}](https://cran.r-project.org/web/packages/devtools/index.html) if not already installed (and if not... `install.packages('devtools')`), and [{rJava}](https://cran.r-project.org/web/packages/rJava/index.html) (`install.packages('rJava')`).
+
+Then: 
+
+`devtools::install_github("egonw/rrdf", subdir="rrdflibs")`
+`devtools::install_github("egonw/rrdf", subdir="rrdf", build_vignettes = FALSE)`
+
+This will install the [{rrdf}](https://github.com/egonw/rrdf) package to handle RDF + [{rrdflibs}](https://github.com/egonw/rrdf/tree/master/rrdflibs): the [Apache Jena](https://jena.apache.org/) libraries.
+Long story shor: Apache Jena is _"... a free and open source Java framework for building Semantic Web and Linked Data applications"_, while {rrdf} wraps R around it. We will rely more on the {rdflib} package (instaled in section `0.1`) in this Notebook ({rrdf} is not on CRAN anymore, and I have no idea if it is maintained anymore). However, Apache Jena itself is very popular.
+
+### 0.3 {jsonlite} to parse JSON and {SPARQL}
+
+`install.packages('jsonlite')`
+`install.packages('SPARQL')`
+
+### 0.4 Wikidata and Wikipedia related packages
+
+`install.packages('WikidataR')`
+`install.packages('WikidataQueryServiceR')`
+`install.packages('WikipediR')`
+
+### 0.5 {visNetwork} for graph visualizations and {leaflet} for maps
+
+Install {visNetwork} for graph visualizations using [vis.js](http://visjs.org/) javascript library:
+
+`install.packages('visNetwork')`
+`install.packages('leaflet')`
+
+### 0.6 Setup
+
+**Note.** The following chunk loads the packages and defines the project directory tree.
+
+```{r echo = T, message = F}
+# - Directory tree
+dataDir <- '../_data/'
+queryDir <- '../_queries/'
+analyticsDir <- '../_analytics/' 
+
+# - Packages
+library(tidyverse)
+library(httr)
+library(jsonlite)
+library(rdflib)
+library(SPARQL)
+library(scales)
+library(visNetwork)
+library(leaflet)
+```
+
+## 1. Transform a `dataframe` into an RDF adherent graph representation and back
+
+**The roadmap.** We want to start from an R `data.frame` class, a form of data representation well-known to Data Scientists, transform it to a graph in compliance with the [RDF (Resource Description Framework)](https://www.w3.org/RDF/) Semantic Web standard, store in an in-memory [triplestore](https://en.wikipedia.org/wiki/Triplestore) with {rdflib}, and query it with [SPARQL](https://www.w3.org/TR/rdf-sparql-query/) query language for RDF.
+
+Let's use the well-known [`mtcars`](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html) dataset.
+
+### 1.1 Crash `mtcars`: a `dataframe` goes into a triplestore
+
+```{r echo = T, message = F}
+data(mtcars)
+head(mtcars, 5)
+```
+
+We will begin by using `tidyr::pivot_longer()` - a new approach to a short-to-long data transform in {tidyr} - to produce a set of Subject-Predicate-Object [triples](https://en.wikipedia.org/wiki/Semantic_triple) from `mtcars`:
+
+```{r echo = T, message = F}
+car_triples <- 
+  mtcars %>% 
+  rownames_to_column("model") %>% 
+  pivot_longer(-model, 
+               names_to = "attribute", 
+               values_to = "value")
+head(car_triples, 10)
+```
+
+Still I don't want my Subject-Predicate-Object triples to go under `Model`, `attribute`, and `value`, and moreover I do not want the data in the `model` column to play the Subject role. I want to have one **concept**, a sort of an **ID**, identified by an [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) to represent the "things" here, and then `model` will be just another predicate to describe things. 
+
+```{r echo = T, message = F}
+# - produce URIs
+car_triples_0 <- 
+  mtcars %>%
+  rownames_to_column("model") %>% 
+  select("model") %>% 
+  rownames_to_column("subject")
+car_triples_0$subject <- paste0("http://e-rum2020_example.com/mtcars#", 
+                                car_triples_0$model)
+head(car_triples_0, 10)
+```
+
+Now we have an URI for each `model`. Next, add the predicate _model_ to the representation, and rename to Subject-Predicate-Object:
+
+```{r echo = T, message = F}
+# - Subject - Predicate - Object
+car_triples_0$predicate <- "model"
+colnames(car_triples_0) <- c("subject", "object", "predicate")
+car_triples_0 <- car_triples_0[, c("subject", "predicate", "object")]
+head(car_triples_0, 10)
+```
+
+Finally, let's `left_join` the `car_triples_0` with the URIs to `car_triples`, introduce Subject-Predicate-Object column names, and `rbind()` the the `car_triples` set of triples with `car_triples_0` where the values for the _model_ predicate is stored.
+
+```{r echo = T, message = F}
+# - join URIs to car_triples
+car_triples <- 
+  car_triples %>%  
+  left_join(select(car_triples_0, -predicate), 
+            by = c("model" = "object")) %>% 
+  select(-model)
+colnames(car_triples) <- c("predicate", "object", "subject")
+car_triples <- car_triples[, c("subject", "predicate", "object")]  
+
+# - put it together:
+car_triples <- rbind(car_triples, car_triples_0)
+rm(car_triples_0)
+head(car_triples, 10)
+```
+
+We need URIs for the predicates too:
+
+```{r echo = T, message = F}
+# - Predicate URIs
+car_triples$predicate <- paste0("http://e-rum2020_example.com/mtcars#",
+                                car_triples$predicate)
+head(car_triples, 10)
+```
+
+In the `object` column we now find only values. We want to add the RDF compliant datatype descriptors to those, and RDF borrows its data types from the [XML Schema](https://www.w3.org/TR/xmlschema11-2/). I will parse the values in the `object` column with `regex` to identify the types. **Note.** This feels a bit uncomfortable, I know: _sometimes_ R can parse a set of plain values and determine their XML Schema datatype for you, as we will see later. 
+
+```{r echo = T, message = F}
+# - Datatypes defined in XML Schema 1.1 Part 2: Datatypes [XMLSCHEMA11-2]: 
+# - https://www.w3.org/TR/rdf11-concepts/#section-Datatypes
+# - XML Schema Datatypes are URIs of the form http://www.w3.org/2001/XMLSchema#xxx
+# - xxx is the name of a datatype
+car_triples$object <- sapply(car_triples$object,
+                             function(x) {
+                               if (grepl('^[[:digit:]]+$', x)) {
+                                 return(paste0('"', x, '"', '^^', '<http://www.w3.org/2001/XMLSchema#integer>'))
+                               } else if (grepl('^[[:digit:]]+\\.[[:digit:]]+$|^\\.[[:digit:]]+$', x)) {
+                                 return(paste0('"', x, '"', '^^', '<http://www.w3.org/2001/XMLSchema#double>'))
+                               } else if (grepl('[[:alpha:]]', x)) {
+                                 return(paste0('"', x, '"', '^^', '<http://www.w3.org/2001/XMLSchema#string>'))
+                               }
+                             })
+head(
+  data.frame(
+    object = car_triples$object, 
+    stringsAsFactors = F), 
+  10)
+```
+
+Let's simplify the representation by introducing _prefixes_: `xsd` for `http://www.w3.org/2001/XMLSchema` and `erum2020mtcars` for `http://e-rum2020_example.com/mtcars`: `car_triples_prefixed`.
+
+```{r echo = T, message = F}
+# - use xsd prefix to simplify object
+car_triples_prefixed <- car_triples  
+car_triples_prefixed$object <- gsub("http://www.w3.org/2001/XMLSchema#",
+                                    "xsd:",
+                                    car_triples_prefixed$object)
+# - use prefix mtcars to simplify predicate
+car_triples_prefixed$predicate <- gsub("http://e-rum2020_example.com/mtcars#",
+                                       "erum2020mtcars:",
+                                       car_triples_prefixed$predicate)
+# - use prefix mtcars to simplify subject
+car_triples_prefixed$subject <- gsub("http://e-rum2020_example.com/mtcars#",
+                                     "erum2020mtcars:",
+                                     car_triples_prefixed$subject)
+head(car_triples_prefixed, 10)
+```
+
+### 1.2 Visualize the `mtcars` triplestore as a graph
+
+Let's take a look at a subset of the `mtcars` dataset, represented as a set of triple. We will downsample `car_triples` in order to obtain a managable visualization:
+
+```{r echo = T, message = F, fig.width = 8}
+# - visualize mtcars graph
+# - nodes
+nodes <- unique(c(car_triples_prefixed$subject, car_triples_prefixed$object))
+graph_nodes <- data.frame(id = 1:length(nodes),
+                          label = nodes,
+                          stringsAsFactors = F)
+graph_nodes$color <- ifelse(grepl("mtcars:", graph_nodes$label), "lightblue", "lightgreen")
+graph_nodes$size <- ifelse(grepl("mtcars:", graph_nodes$label), 15, 5)
+graph_nodes$shadow <- T
+graph_nodes$font.face <- "sans-serif"
+graph_nodes$font.size <- 10
+# - edges
+from <- graph_nodes$id[match(car_triples_prefixed$subject, graph_nodes$label)]
+to <- graph_nodes$id[match(car_triples_prefixed$object, graph_nodes$label)]
+graph_edges <- data.frame(from = from, 
+                          to = to,
+                          label = car_triples_prefixed$predicate,
+                          stringsAsFactors = F)
+graph_edges$color <- "gray"
+graph_edges$smooth <- T
+graph_edges$width <- .25
+graph_edges$font.size <- 8
+# - downsample graph for visualization
+searchQuery <- "Merc"
+wSearch <- graph_nodes$id[which(grepl(searchQuery, graph_nodes$label))]
+graph_edges_0 <- graph_edges %>% 
+  filter(from %in% wSearch)
+graph_nodes_0 <- graph_nodes %>% 
+  filter((id %in% graph_edges_0$from) | (id %in% graph_edges_0$to))
+# - visualize
+visNetwork(nodes = graph_nodes_0,
+           edges = graph_edges_0, 
+           main = list(text = "MTCARS example",
+                       style = "font-family:sans-serif;font-size:15px;text-align:center;"))
+```
+
+At this point, `mtcars` has a form of a triplestore, but it is still an R `data.frame`. It is good for nothing.
+
+## 2. RDF representation and serializations w. {rdflib}
+
+Let's get back to `mtcars` represented by `car_triples`. We will now turn `car_triples` into an in-memory triplestore from {rdflib}. We first initialize an `rdf` object in {rdflib}:
+
+```{r echo = T, message = F}
+# - init an rdf object
+triplestore <- rdf()
+```
+
+### 2.1 Populating {rdflib} triplestores
+
+Now we use `rdf_add()` to add subjects, objects, and predicates - the triples - to our `triplestore` triplestore:
+
+```{r echo = T, message = F}
+prefix_mtcars <- "http://e-rum2020_example.com/mtcars#"
+# - add one triple
+triplestore %>% 
+  rdf_add(subject = paste0(prefix_mtcars, car_triples$subject[1]), 
+          predicate = paste0(prefix_mtcars, car_triples$predicate[1]), 
+          object = car_triples$object[1])
+print(triplestore)
+```
+
+We have just added one single triple to `triplestore`. Let's add another one:
+
+```{r echo = T, message = F}
+# - add another one
+triplestore %>% 
+  rdf_add(subject = paste0(prefix_mtcars, car_triples$subject[2]), 
+          predicate = paste0(prefix_mtcars, car_triples$predicate[2]), 
+          object = car_triples$object[2])
+print(triplestore)
+```
+
+And we could go and on adding one by the rows of the `car_triples` data.frame to `triples`. Could we use the initial `mtcars` data.frame to populate a triplestore at once? First we want to remove the existing `triplestore`:
+
+```{r echo = T, message = F}
+# - note: in {rdflib} you need to...
+# - clean up (!)
+rdf_free(triplestore)
+```
+
+then first prepare `mtcars`:
+
+```{r echo = T, message = F}
+# - add whole data.frame
+mtcars_0 <- mtcars %>% 
+  rownames_to_column("model") %>% 
+  rownames_to_column("subject")
+head(mtcars_0, 10)
+```
+
+and populate a new `triplestore`:
+
+```{r echo = T, message = F}
+# - init an rdf object
+triplestore <- rdf()
+# - use as_rdf()
+triplestore <- as_rdf(
+  mtcars_0,
+  prefix = prefix_mtcars,
+  key_column = "subject"
+)
+print(triplestore)
+```
+
+**Note.** We can now see an automatic type conversion from R to `xsd:`, however it is not perfect.
+
+### 2.2 RDF serialization from {rdflib}: JSON-LD
+
+#### 2.2.1 JSON-LD
+
+We begin with **JSON-LD**
+
+```{r echo = T, message = F}
+# - serialize rdf_frame to JSON-LD
+# - first create a file with a .json extenstion
+outFile <- paste0(dataDir, "mtcars.json")
+file.create(outFile)
+# - use `rdf_serialize` and pass format = 'jsonld'
+rdf_serialize(
+  rdf = triplestore,
+  doc = outFile,
+  format = 'jsonld'
+)
+```
+
+How does the JSON-LD representation of `triplestore` looks like?
+
+```{r echo = T, message = F}
+options(rdf_print_format = 'jsonld', 
+        rdf_max_print = "40")
+print(triplestore)
+```
+
+Now we will use `rdf_parse()` to get back from JSON-LD stored in `_data/mtcars.json` to R: `triplestore_0`:
+
+```{r echo = T, message = F}
+# - parse mtcars.json to rdf_frame_0
+triplestore_0 <- rdf()
+rdf_parse(
+  doc = outFile,
+  format = "jsonld",
+  rdf = triplestore_0
+)
+# - clean up (!)
+rdf_free(triplestore_0)
+```
+
+#### 2.2.2 RDF/XML
+
+The `RDF/XML` serialization used to be the most popular one for a very long time. I think `JSON` is taking over definitely.
+
+```{r echo = T, message = F}
+# - serialize rdf_frame to RDF/XML: mtcars.rdf
+outFile <- paste0(dataDir, "mtcars.rdf")
+file.create(outFile)
+rdf_serialize(
+  rdf = triplestore,
+  doc = outFile,
+  format = "rdfxml",
+)
+```
+
+```{r echo = T, message = F}
+options(rdf_print_format = 'rdfxml', 
+        rdf_max_print = "40")
+# - parse mtcars.rdf to triplestore_0
+triplestore_0 <- rdf()
+rdf_parse(
+  doc = outFile,
+  format = "rdfxml",
+  rdf = triplestore_0
+)
+# - clean up (!)
+rdf_free(triplestore_0)
+```
+
+#### 2.2.3 Turtle
+
+```{r echo = T, message = F}
+# - serialize rdf_frame to Turtle: mtcars.ttl
+outFile <- paste0(dataDir, "mtcars.ttl")
+file.create(outFile)
+rdf_serialize(
+  rdf = triplestore,
+  doc = outFile,
+  format = "turtle"
+)
+```
+
+```{r echo = T, message = F}
+options(rdf_print_format = 'turtle', 
+        rdf_max_print = "40")
+# - parse mtcars.ttl to triplestore_0
+triplestore_0 <- rdf()
+rdf_parse(
+  doc = outFile,
+  format = "turtle",
+  rdf = triplestore_0
+)
+# - clean up (!)
+rdf_free(triplestore_0)
+```
+
+#### 2.2.4 N-Triples
+
+```{r echo = T, message = F}
+# - serialize rdf_frame to N-Triples: mtcars.nt
+outFile <- paste0(dataDir, "mtcars.nt")
+file.create(outFile)
+rdf_serialize(
+  rdf = triplestore,
+  doc = outFile,
+  format = "ntriples",
+)
+```
+
+```{r echo = T, message = F}
+options(rdf_print_format = 'ntriples', 
+        rdf_max_print = 20)
+# - parse mtcars.ttl to triplestore_0
+triplestore_0 <- rdf()
+rdf_parse(
+  doc = outFile,
+  format = "turtle",
+  rdf = triplestore_0
+)
+# - clean up (!)
+rdf_free(triplestore_0)
+```
+
+## 3. From RDF to `data.frame`: reconstruct `mtcars` with SPARQL
+
+Finally, let's start reconstructing the `mtcars` data.frame from its RDF representation in the `triplestore`. We will use [SPARQL](https://www.w3.org/TR/rdf-sparql-query/). SPARQL stands for: SPARQL Protocol and RDF Query Language, and it is a query language for RDF.
+
+## 3.1 Find a particular car from `mtcars`
+
+The following query will:
+- try to _bind_ to the variable `?subject` all the the URIs that have the value of `2.2` on the `wt` predicate;
+- try to _bind_ to the variable `?model` the value of the `model` predicate corresponding to each selected `?subject`. 
+
+```{r echo = T, message = F}
+# - SPARQL: query triplestore
+# - car with wt == 2.2: id, model
+sparqlQuery <-
+  'PREFIX mtcars:<http://e-rum2020_example.com/mtcars#> 
+   PREFIX xsd:<http://www.w3.org/2001/XMLSchema#>
+   SELECT ?subject ?model
+    WHERE {?subject mtcars:wt "2.2"^^xsd:decimal .
+           ?subject mtcars:model ?model .
+          }'
+# - send query to triplestore via rdf_query():
+res <- rdf_query(triplestore,
+                 query = sparqlQuery,
+                 data.frame = T)
+# - show result
+print(res)
+```
+
+## 3.2 Find out a thing or two about Mazda RX4
+
+```{r echo = T, message = F}
+# - Mazda RX4: id, model, and wt
+sparqlQuery <-
+  'PREFIX mtcars:<http://e-rum2020_example.com/mtcars#>  
+   SELECT ?id ?model ?wt ?cyl ?disp
+    WHERE {?id mtcars:wt ?wt .
+           ?id mtcars:cyl ?cyl .
+           ?id mtcars:disp ?disp .
+           ?id mtcars:model "Mazda RX4" .
+           ?id mtcars:model ?model .
+          }'
+res <- rdf_query(triplestore,
+                 query = sparqlQuery,
+                 data.frame = T)
+print(res)
+```
+
+## 3.3 `SELECT * FROM ...`
+
+How to `SELECT * FROM ...`: reconstruct the `mtcars` data.frame in triplestore representation:
+
+```{r echo = T, message = F}
+sparqlQuery <-
+  'SELECT ?subject ?predicate ?object 
+    WHERE {?subject ?predicate ?object .}'
+res <- rdf_query(triplestore,
+                 query = sparqlQuery,
+                 data.frame = T)
+print(res)
+```
+
+## 3.4 All Fiat, Mazda, or Merceds cars, w. mpg and cyl:
+
+```{r echo = T, message = F}
+# - all Fiat, Mazda, or Merceds cars, w. mpg and cyl
+sparqlQuery <-
+  'PREFIX mtcars:<http://e-rum2020_example.com/mtcars#> 
+   SELECT ?id ?model ?mpg ?cyl
+    WHERE {?id mtcars:model ?model .
+           ?id mtcars:mpg ?mpg .
+           ?id mtcars:cyl ?cyl .
+           FILTER regex (?model, "Fiat|Mazda|Merc") .
+          }'
+
+res <- rdf_query(triplestore,
+                 query = sparqlQuery,
+                 data.frame = T)
+print(res)
+```
+
+## 3.4 `mtcars` becomes a `data.frame` again
+
+Finally, a complete reconstruction of `mtcars`:
+
+```{r echo = T, message = F}
+# - all Fiat, Mazda, or Merceds cars, w. mpg and cyl
+sparqlQuery <-
+  'PREFIX mtcars:<http://e-rum2020_example.com/mtcars#> 
+   SELECT ?model ?mpg ?cyl ?disp ?hp ?drat ?wt ?qsec ?vs ?am ?gear ?carb 
+    WHERE {?id mtcars:model ?model;
+              mtcars:mpg ?mpg;
+              mtcars:cyl ?cyl;
+              mtcars:disp ?disp;
+              mtcars:hp ?hp;
+              mtcars:drat ?drat;
+              mtcars:wt ?wt;
+              mtcars:qsec ?qsec;
+              mtcars:vs ?vs;
+              mtcars:am ?am;
+              mtcars:gear ?gear;
+              mtcars:carb ?carb .
+    }'
+
+res <- rdf_query(triplestore,
+                 query = sparqlQuery,
+                 data.frame = T)
+print(res)
+```
+
+```{r echo = T, message = F}
+# - clean up (!)
+rdf_free(triplestore)
+```
+
+## 4. Examples
+
+### 4.1 When the datasets is delivered through a SPARQL end-point 
+
+Nice: `rdf_parse` will work with the Internet. In this particular example, the dataset on the _Total revenues of the electronic communications sector_ from [data.europa.eu](https://data.europa.eu/) is delivered in the following way:
+- the [dataset webpage](https://data.europa.eu/euodp/en/data/dataset/vH90eGl2lyvLuJcMR8YwA) offers several formats,
+- but for the `RDF/XML` format it actually makes a SPARQL call to its end-point and delivers the result in the desired serialization from a query (see: the [All available observations for the indicator, in RDF/XML format](https://data.europa.eu/euodp/en/data/dataset/vH90eGl2lyvLuJcMR8YwA/resource/105d4d96-e487-4563-bc30-1934fbad1c0d) version of the dataset and hover mouse pointer over the **DOWNLOAD** button);
+- see `eu_telecom_query.txt` in the `_code` directory of this repo to find out that I have stored the query there (note: URL encoded + parameters i.e. `format=application:rdf+xml`).
+
+```{r echo = T, message = F}
+options(rdf_print_format = 'ntriples', 
+        rdf_max_print = 5)
+### --- Data from the WWW w. {rdflib}
+rdf_web <- rdf()
+# - Total revenues of the electronic communications sector
+# - source: EU Open Data Portal
+# - https://data.europa.eu/euodp/en/data/dataset/vH90eGl2lyvLuJcMR8YwA
+queryRDF <- readLines(paste0(queryDir, "eu_telecom_query.txt"))
+rdf_parse(
+  doc = queryRDF,
+  format = "rdfxml",
+  rdf = rdf_web
+)
+```
+
+```{r echo = T, message = F}
+# - from SPARQL to data.frame:
+sparqlQuery <-
+  'SELECT ?subject ?predicate ?object 
+    WHERE {?subject ?predicate ?object .}'
+total_revenues <- rdf_query(rdf_web,
+                            query = sparqlQuery,
+                            data.frame = T)
+head(total_revenues)
+```
+Let's wrangle this:
+
+```{r echo = T, message = F}
+# - wrangle total_revenues
+total_revenues$subject <- 
+  gsub("http://semantic.digital-agenda-data.eu/data/digital-agenda-scoreboard-key-indicators/tel_rev/total_tel/million_euro/",
+       "",
+       total_revenues$subject)
+total_revenues <- total_revenues %>% 
+  separate(col = "subject", 
+           sep = "/", 
+           into = c("country", "year")) %>% 
+  filter(str_detect(predicate, "obsValue")) %>% 
+  select(-predicate)
+total_revenues$object <- as.numeric(total_revenues$object)
+total_revenues <- filter(total_revenues, 
+                         country %in% c("NL", "DE", "FR", "IT"))
+ggplot(total_revenues, aes(x = year, 
+                           y = object,
+                           group = country, 
+                           color = country,
+                           fill = country)) +
+  geom_line() + 
+  geom_point(size = 2) + 
+  geom_point(size = 1.5, color = "white") +  
+  ggtitle("EU countries: Total Revenue for Telecommunications") +
+  ylab("EUR (Million)") + 
+  theme_bw() + 
+  theme(panel.border = element_blank()) + 
+  theme(axis.text.x = element_text(angle = 90))
+```
+We can obtain the same from a smarter SPARQL query:
+
+```{r echo = T, message = F}
+# - for <http://purl.org/linked-data/sdmx>, see: https://lov.linkeddata.es/dataset/lov/vocabs/sdmx
+sparqlQuery <-
+  'PREFIX measure:<http://purl.org/linked-data/sdmx/2009/measure#>
+   SELECT ?country ?revenue
+    WHERE {?country measure:obsValue ?revenue . }'
+
+total_revenues_0 <- rdf_query(rdf_web,
+                              query = sparqlQuery,
+                              data.frame = T)
+print(total_revenues_0)
+```
+
+```{r echo = T, message = F}
+# - wrangle total_revenues
+total_revenues_0$country <- 
+  gsub("http://semantic.digital-agenda-data.eu/data/digital-agenda-scoreboard-key-indicators/tel_rev/total_tel/million_euro/",
+       "",
+       total_revenues_0$country)
+total_revenues_0 <- total_revenues_0 %>% 
+  separate(col = "country", 
+           sep = "/", 
+           into = c("country", "year"))
+total_revenues_0 <- filter(total_revenues_0, 
+                         country %in% c("EL", "FI", "DE", "PL"))
+ggplot(total_revenues_0, aes(x = year,
+                             y = revenue,
+                             group = country,
+                             color = country,
+                             fill = country)) +
+  geom_line() + 
+  geom_point(size = 2) + 
+  geom_point(size = 1.5, color = "white") +  
+  ggtitle("EU countries: Total Revenue for Telecommunications") +
+  ylab("EUR (Million)") + 
+  theme_bw() + 
+  theme(panel.border = element_blank()) + 
+  theme(axis.text.x = element_text(angle = 90))
+```
+
+```{r echo = T, message = F}
+# - clean up (!)
+rdf_free(rdf_web)
+```
+
+### 4.2 Wikidata JSON from Wikidata Query Service (SPARQL end-point)
+
+```{r echo = T, message = F}
+wdqs_endpoint = 'https://query.wikidata.org/sparql?format=json&query='
+sparqlQuery <- 'SELECT ?city ?cityLabel ?coordinate ?population ?date
+  WHERE {?city wdt:P31 wd:Q515 .
+         ?city wdt:P17 wd:Q38 .
+         ?city wdt:P625 ?coordinate .
+         ?city p:P1082 ?populationStatement .
+         ?populationStatement ps:P1082 ?population;
+                              pq:P585 ?date .
+         SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+         }'
+sparqlQuery <- paste0(wdqs_endpoint, sparqlQuery)
+sparqlQuery <- URLencode(sparqlQuery)
+cat(sparqlQuery)
+```
+
+```{r echo = T, message = F}
+res <- httr::GET(url = sparqlQuery)
+cities <- rawToChar(res$content)
+cities <- fromJSON(cities, simplifyDataFrame = T)
+cities <- flatten(cities$results$bindings)
+cities <- cities %>%
+  select(cityLabel.value, population.value,
+         date.value, coordinate.value)
+cities$population.value <- as.numeric(cities$population.value)
+head(cities, 10)
+```
+Change in the population of Italian cities:
+
+```{r echo = T, message = F, fig.width = 12}
+citiesPopulation <- cities %>% 
+  select(cityLabel.value, population.value, date.value) %>% 
+  mutate(date.value = str_sub(date.value, 1, 10)) %>% 
+  arrange(cityLabel.value, desc(population.value), desc(date.value)) %>% 
+  filter(!str_detect(date.value, "^-"))
+searchQuery <- c('Rome', 'Milan', 'Genoa', 
+                 'Florence', 'Ravenna', 'Ferrara', 
+                 'Pisa', 'Verona', 'Venice')
+citiesPopulation <- citiesPopulation %>% 
+  filter(cityLabel.value %in% searchQuery)
+ggplot(citiesPopulation, aes(x = date.value,
+                             y = population.value,
+                             group = cityLabel.value,
+                             color = cityLabel.value,
+                             fill = cityLabel.value)) +
+  geom_line() + 
+  geom_point(size = 2) + 
+  geom_point(size = 1.5, color = "white") + 
+  scale_y_continuous(labels = comma) +
+  ggtitle("Population of Italian Cities") +
+  ylab("Population") + xlab("Date") +
+  theme_bw() + 
+  theme(panel.border = element_blank()) + 
+  theme(axis.text.x = element_text(angle = 90, size = 9))
+```
+
+Locate cities:
+
+```{r echo = T, message = F, fig.width = 8}
+citiesMap <- cities %>% 
+  select(cityLabel.value, coordinate.value) %>% 
+  distinct()
+coordinates <- str_extract_all(citiesMap$coordinate.value, '([[:digit:]]|\\.)+')
+coordinates <- as.data.frame(do.call(rbind, coordinates), stringsAsFactors = F)
+colnames(coordinates) <- c('lng', 'lat')
+citiesMap <- cbind(citiesMap, coordinates) %>% 
+  select(cityLabel.value, lat, lng)
+citiesMap$lat <- round(as.numeric(coordinates$lat), 2)
+citiesMap$lng <- round(as.numeric(coordinates$lng), 2)
+leaflet() %>%
+        addProviderTiles(providers$CartoDB.Positron) %>% 
+        addCircleMarkers(lng = citiesMap$lng,
+                         lat = citiesMap$lat)
+leaflet() %>%
+  addProviderTiles(providers$CartoDB.Positron) %>%
+  addMarkers(data = cities,
+             lng = citiesMap$lng,
+             lat = citiesMap$lat,
+             popup = paste('<b>', citiesMap$cityLabel.value, '</b><br>',
+                            "Lat: ", citiesMap$lng, '<br>',
+                            "Lon: ", citiesMap$lat, '<br>'),
+                      clusterOptions = markerClusterOptions()
+  )
+
+```
+
+### 4.2 DBpedia through {SPARQL}
+
+The [{SPARQL}](https://cran.r-project.org/web/packages/SPARQL/index.html) package is useful in interaction with SPARQL endpoints. It exposes one function, `SPARQL:SPARQL()` to connect to an endpoint, and has  a built-in vector of common namespaces and their prefixes:
+
+```{r echo = T, message = F}
+print(SPARQL::commonns)
+```
+`SPARQL:SPARQL()` returns a nicely formatted data.frame populated by the values of query variables. Let's use {SPARQL} to connect to [DBpedia](https://wiki.dbpedia.org/): fetch Italian cities with more than 10,000 inhabitants and their names in Italian.
+
+```{r echo = T, message = F}
+dbpedia_endpoint <- 'http://dbpedia.org/sparql'
+sparqlQuery <-"prefix dbpedia: <http://dbpedia.org/resource/>
+               prefix dbpedia-owl: <http://dbpedia.org/ontology/> 
+               SELECT DISTINCT ?cityURI ?city ?population ?latitude ?longitude
+                 WHERE {
+                   ?cityURI dbpedia-owl:country dbpedia:Italy .
+                   ?cityURI geo:lat  ?latitude .
+                   ?cityURI geo:long  ?longitude .
+                   ?cityURI rdfs:label ?city .
+                   ?cityURI dbpedia-owl:populationTotal ?population .
+                   FILTER (lang(?city) = 'it') .
+                   FILTER (?population > 10000) .
+                 }"
+res <- SPARQL(url = dbpedia_endpoint,
+              query = sparqlQuery)
+print(str(res))
+```
+**Note.** I did not even define `PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>` (as used in the `?city rdfs:label ?cityName .` constraint in the query) or `PREFIX geo:<	http://www.w3.org/2003/01/geo/wgs84_pos#>` (as used in`?city geo:lat  ?latitude .` constraint); see: [DBpedia predefined prefixes](http://fr.dbpedia.org/sparql?nsdecl).
+
+Locate places: the results our found in `res$results`
+
+```{r echo = T, message = F, fig.width = 8}
+places <- res$results %>%
+  select(city, population, latitude, longitude) %>% 
+  arrange(desc(population))
+print(places)
+```
+
+```{r echo = T, message = F, fig.width = 8}
+places$latitude <- round(places$latitude, 2)
+places$longitude <- round(places$longitude, 2)
+leaflet() %>%
+  addProviderTiles(providers$CartoDB.Positron) %>%
+  addMarkers(data = places,
+             popup = paste('<b>', places$city, '</b><br>',
+                            "Population: ", places$population, '<br>',
+                            "Lat: ", places$latitude, '<br>',
+                            "Lon: ", places$longitude, '<br>'),
+                      clusterOptions = markerClusterOptions()
+  )
+```
+
+## Resources
+
+- [RDF 1.1 Primer (W3C Working Group Note 24 June 2014)](https://www.w3.org/TR/rdf11-primer/)
+- [Wikidata:SPARQL tutorial](https://www.wikidata.org/wiki/Wikidata:SPARQL_tutorial)
+- [Wikidata:SPARQL query service/A gentle introduction to the Wikidata Query Service](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/A_gentle_introduction_to_the_Wikidata_Query_Service)
+- SPARQL query examples for Wikidata: 
+   - [Wikidata:SPARQL query service/queries/examples](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/queries/examples)
+   - [Wikidata:SPARQL query service/queries](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/queries)
+
+***
+Goran S. Milovanović, Phd
+
+DataKolektiv, 2020.
+
+contact: goran.milovanovic@datakolektiv.com
+
+[![](img/DK_Logo_100.png)](https://www.datakolektiv.com)
+
+***
+License: [GPLv3](http://www.gnu.org/licenses/gpl-3.0.txt)
+This Notebook is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+This Notebook is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+You should have received a copy of the GNU General Public License along with this Notebook. If not, see <http://www.gnu.org/licenses/>.
+
+***
+
+

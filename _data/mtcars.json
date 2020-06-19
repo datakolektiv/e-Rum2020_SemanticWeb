@@ -1,0 +1,1540 @@
+{
+  "@graph": [
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#1",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "6"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "160"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.9"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "110"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Mazda RX4",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "21"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "16.46"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "2.62"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#10",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "6"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "167.6"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.92"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "123"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Merc 280",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "19.2"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "18.3"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.44"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#11",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "6"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "167.6"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.92"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "123"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Merc 280C",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "17.8"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "18.9"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.44"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#12",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "8"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "275.8"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.07"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "180"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Merc 450SE",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "16.4"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "17.4"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4.07"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#13",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "8"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "275.8"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.07"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "180"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Merc 450SL",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "17.3"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "17.6"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.73"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#14",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "8"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "275.8"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.07"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "180"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Merc 450SLC",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "15.2"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "18"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.78"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#15",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "8"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "472"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "2.93"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "205"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Cadillac Fleetwood",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "10.4"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "17.98"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "5.25"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#16",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "8"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "460"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "215"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Lincoln Continental",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "10.4"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "17.82"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "5.424"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#17",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "8"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "440"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.23"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "230"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Chrysler Imperial",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "14.7"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "17.42"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "5.345"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#18",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "78.7"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4.08"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "66"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Fiat 128",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "32.4"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "19.47"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "2.2"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#19",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "2"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "75.7"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4.93"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "52"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Honda Civic",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "30.4"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "18.52"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1.615"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#2",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "6"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "160"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.9"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "110"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Mazda RX4 Wag",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "21"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "17.02"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "2.875"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#20",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "71.1"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4.22"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "65"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Toyota Corolla",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "33.9"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "19.9"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1.835"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#21",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "120.1"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.7"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "97"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Toyota Corona",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "21.5"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "20.01"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "2.465"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#22",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "2"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "8"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "318"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "2.76"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "150"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Dodge Challenger",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "15.5"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "16.87"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.52"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#23",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "2"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "8"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "304"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.15"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "150"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "AMC Javelin",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "15.2"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "17.3"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.435"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#24",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "8"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "350"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.73"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "245"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Camaro Z28",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "13.3"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "15.41"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.84"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#25",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "2"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "8"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "400"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.08"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "175"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Pontiac Firebird",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "19.2"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "17.05"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.845"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#26",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "79"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4.08"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "66"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Fiat X1-9",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "27.3"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "18.9"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1.935"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#27",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "2"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "120.3"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4.43"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "5"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "91"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Porsche 914-2",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "26"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "16.7"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "2.14"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#28",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "2"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "95.1"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.77"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "5"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "113"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Lotus Europa",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "30.4"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "16.9"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1.513"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#29",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "8"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "351"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4.22"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "5"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "264"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Ford Pantera L",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "15.8"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "14.5"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.17"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#3",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "108"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.85"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "93"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Datsun 710",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "22.8"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "18.61"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "2.32"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#30",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "6"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "6"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "145"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.62"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "5"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "175"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Ferrari Dino",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "19.7"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "15.5"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "2.77"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#31",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "8"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "8"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "301"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.54"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "5"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "335"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Maserati Bora",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "15"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "14.6"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.57"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#32",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "2"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "121"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4.11"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "109"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Volvo 142E",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "21.4"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "18.6"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "2.78"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#4",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "6"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "258"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.08"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "110"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Hornet 4 Drive",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "21.4"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "19.44"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.215"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#5",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "2"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "8"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "360"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.15"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "175"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Hornet Sportabout",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "18.7"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "17.02"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.44"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#6",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "6"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "225"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "2.76"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "105"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Valiant",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "18.1"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "20.22"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.46"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#7",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "8"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "360"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.21"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "245"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Duster 360",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "14.3"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "15.84"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.57"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#8",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "2"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "146.7"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.69"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "62"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Merc 240D",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "24.4"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "20"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.19"
+      }
+    },
+    {
+      "@id": "http://e-rum2020_example.com/mtcars#9",
+      "http://e-rum2020_example.com/mtcars#am": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0"
+      },
+      "http://e-rum2020_example.com/mtcars#carb": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "2"
+      },
+      "http://e-rum2020_example.com/mtcars#cyl": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#disp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "140.8"
+      },
+      "http://e-rum2020_example.com/mtcars#drat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.92"
+      },
+      "http://e-rum2020_example.com/mtcars#gear": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "4"
+      },
+      "http://e-rum2020_example.com/mtcars#hp": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "95"
+      },
+      "http://e-rum2020_example.com/mtcars#model": "Merc 230",
+      "http://e-rum2020_example.com/mtcars#mpg": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "22.8"
+      },
+      "http://e-rum2020_example.com/mtcars#qsec": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "22.9"
+      },
+      "http://e-rum2020_example.com/mtcars#vs": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "1"
+      },
+      "http://e-rum2020_example.com/mtcars#wt": {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "3.15"
+      }
+    }
+  ]
+}
