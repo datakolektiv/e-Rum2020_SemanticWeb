@@ -1,5 +1,5 @@
 # e-Rum2020_SemanticWeb
-e-Rum 2020 Workshop: Semantic Web in R for Data Scientists
+<span style="font-size:124%;">e-Rum 2020 Workshop: <b>Semantic Web in R for Data Scientists</b></span>
 
 ![](_img/eRum2020.png)
 
