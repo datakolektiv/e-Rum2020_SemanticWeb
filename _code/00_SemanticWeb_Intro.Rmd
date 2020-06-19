@@ -103,6 +103,10 @@ library(visNetwork)
 library(leaflet)
 ```
 
+### 0.7 Recommended reading
+
+[A tidyverse lover’s intro to RDF](https://cran.r-project.org/web/packages/rdflib/vignettes/rdf_intro.html#fn2) - Carl Boettiger's [{rdflib}](https://cran.r-project.org/web/packages/rdflib/index.html) vignette. This notebook expands upon what Carl Boettiger's excellent vignette explains about {rdflib}.  
+
 ## 1. Transform a `dataframe` into an RDF adherent graph representation and back
 
 **The roadmap.** We want to start from an R `data.frame` class, a form of data representation well-known to Data Scientists, transform it to a graph in compliance with the [RDF (Resource Description Framework)](https://www.w3.org/RDF/) Semantic Web standard, store in an in-memory [triplestore](https://en.wikipedia.org/wiki/Triplestore) with {rdflib}, and query it with [SPARQL](https://www.w3.org/TR/rdf-sparql-query/) query language for RDF.
@@ -827,6 +831,7 @@ leaflet() %>%
 - SPARQL query examples for Wikidata: 
    - [Wikidata:SPARQL query service/queries/examples](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/queries/examples)
    - [Wikidata:SPARQL query service/queries](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/queries)
+- [A tidyverse lover’s intro to RDF](https://cran.r-project.org/web/packages/rdflib/vignettes/rdf_intro.html#fn2) - Carl Boettiger's [{rdflib}](https://cran.r-project.org/web/packages/rdflib/index.html) vignette
 
 ***
 Goran S. Milovanović, Phd

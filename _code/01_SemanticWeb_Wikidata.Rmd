@@ -1,0 +1,724 @@
+---
+title: e-Rum2020 - Semantic Web in R for Data Scientists
+author:
+  name: Goran S. Milovanović, Phd
+  affiliation: DataKolektiv, Chief Scientist & Owner, Wikimedia Deutschland, Data Scientist
+date: "`r format(Sys.time(), '%Y %m %d')`"
+abstract: 
+output:
+  html_notebook:
+    code_folding: show
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+    toc_depth: 5
+  html_document:
+    toc: yes
+    toc_depth: 5
+---
+
+[![](img/DK_Logo_100.png)](https://www.datakolektiv.com)
+
+***
+# Notebook 01: Wikidata from R
+
+**Feedback** should be send to `goran.milovanovic@datakolektiv.com`. 
+
+These notebooks accompany the e-Rum2020: Semantic Web in R for Data Scientists Workshop, 2020/06/20.
+
+**To obtain these notebooks:** `git clone` [datakolektiv/e-Rum2020_SemanticWeb](https://github.com/datakolektiv/e-Rum2020_SemanticWeb).
+
+***
+
+## 0. Prerequisites/Installations
+
+We have some installations to complete first. This should take no time at all.
+
+### 0.1 Install {rdflib} + dependencies
+
+#### Ubuntu/Debian
+
+For **Ubuntu/Debian**, open the terminal and install `librdf0-dev`:
+
+`sudo apt-get install librdf0-de`
+
+so that {rdflib} can rely on [{redland}](https://cran.r-project.org/web/packages/redland/index.html) - an R interface to the [Redland RDF C library](http://librdf.org/docs/api/index.html).
+
+Then: `install.packages('rdflib')` from your R session. Also, please `install.packages('jsonld')` - the [{jsonld}](https://cran.r-project.org/web/packages/jsonld/index.html) package that parses [JSON-LD](https://en.wikipedia.org/wiki/JSON-LD), a semantic web flavour of [JSON](https://en.wikipedia.org/wiki/JSON) (JSON-LD == JSON for Linked Data).
+
+#### Windows
+
+Windows users should be able to install _everything_ by just doing `install.packages()`. When installing {rdflib} accept installing from source when prompted.
+
+### [OPTIONAL] 0.2 Install {rrdf} + dependencies
+ 
+Following the instructions from [https://github.com/egonw/rrdf](https://github.com/egonw/rrdf)
+
+You will need [{devtools}](https://cran.r-project.org/web/packages/devtools/index.html) if not already installed (and if not... `install.packages('devtools')`), and [{rJava}](https://cran.r-project.org/web/packages/rJava/index.html) (`install.packages('rJava')`).
+
+Then: 
+
+`devtools::install_github("egonw/rrdf", subdir="rrdflibs")`
+`devtools::install_github("egonw/rrdf", subdir="rrdf", build_vignettes = FALSE)`
+
+This will install the [{rrdf}](https://github.com/egonw/rrdf) package to handle RDF + [{rrdflibs}](https://github.com/egonw/rrdf/tree/master/rrdflibs): the [Apache Jena](https://jena.apache.org/) libraries.
+Long story shor: Apache Jena is _"... a free and open source Java framework for building Semantic Web and Linked Data applications"_, while {rrdf} wraps R around it. We will rely more on the {rdflib} package (instaled in section `0.1`) in this Notebook ({rrdf} is not on CRAN anymore, and I have no idea if it is maintained anymore). However, Apache Jena itself is very popular.
+
+### 0.3 {jsonlite} to parse JSON and {SPARQL}
+
+`install.packages('jsonlite')`
+`install.packages('SPARQL')`
+
+### 0.4 Wikidata and Wikipedia related packages
+
+`install.packages('WikidataR')`
+`install.packages('WikidataQueryServiceR')`
+`install.packages('WikipediR')`
+
+### 0.5 {visNetwork} for graph visualizations and {leaflet} for maps
+
+Install {visNetwork} for graph visualizations using [vis.js](http://visjs.org/) javascript library:
+
+`install.packages('visNetwork')`
+`install.packages('leaflet')`
+
+### 0.6 Setup
+
+**Note.** The following chunk loads the packages and defines the project directory tree.
+
+```{r echo = T, message = F}
+# - Directory tree
+dataDir <- '../_data/'
+queryDir <- '../_queries/'
+analyticsDir <- '../_analytics/' 
+
+# - Packages
+library(tidyverse)
+library(data.table)
+library(httr)
+library(jsonlite)
+library(WikidataR)
+library(WikidataQueryServiceR)
+library(WikipediR)
+library(SPARQL)
+library(scales)
+library(visNetwork)
+library(leaflet)
+```
+
+## 1. Accessing Wikidata from R: the API and its R client library for Wikidata
+
+### 1.1 The {WikidataR} package
+
+**Note.** If you want to learn how to use Wikidata, you probably first need to study the following page thoroughly: [Wikibase/DataModel/JSON](https://www.mediawiki.org/wiki/Wikibase/DataModel/JSON). Do not confuse Wikidata and Wikibase. While [Wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page) is a data set, [Wikibase](https://wikiba.se/) is what runs it to enable structured knowledge support for Wiki installations. Essentially, Wikidata is a data set: ontology + items. You can use it anyways you like it, not necessarily the way Wikipedians, or the Wikimedia Foundation and its chapters across the World do. [It's all yours](https://www.wikidata.org/wiki/Wikidata:Licensing).
+
+The {WikidataR} package wraps-up the [Wikidata MediaWiki API](https://www.wikidata.org/wiki/Wikidata:Data_access#MediaWiki_API) (see [API documentation](https://www.wikidata.org/w/api.php)) calls for you. If you are about to use the Wikidata API directly, use the modules that return JSON: `wbgetentities` and `wbsearchentities`. 
+
+We will use the following example to study the structure of the Wikidata Data Model.
+
+#### 1.1.1 Analyze one Wikidata item
+
+**Example.** Retrieve [`Q1860`](https://www.wikidata.org/wiki/Q1860) (it is: **English**, in the sense of: English language) and study its structure.
+
+```{r echo = T, eval = T}
+# - Retrieve the Wikidata item: English (Q1860) 
+item <- get_item(id = 'Q1860')
+class(item)
+```
+
+It is really a list:
+
+```{r echo = T, eval = T}
+# - Retrieve the Wikidata item: English (Q1860) 
+length(item)
+```
+
+Hm?
+
+```{r echo = T, eval = T}
+print(paste0("length(item[[1]]): ", length(item[[1]])))
+item_components <- sapply(item, names)
+item_components
+```
+
+`$type` is `item`:
+
+```{r echo = T, eval = T}
+# - item is English (Q1860) 
+item[[1]]$type
+```
+
+Think of Wikidata as composed of **items** (resources that represent "things") and **properties** (predicate resources). Together they are called **entities**. We have used the `get_item()` function, and naturally, the result is a dataset on some Wikidata item. Which one?
+
+```{r echo = T, eval = T}
+# - item is English (Q1860) 
+item[[1]]$id
+```
+
+In Wikidata, everything prefixed with `Q` is an _item_, and everything prefixed with `P` is a _property_; there are other things as well (`L` for lexems, for example), but we will focus on items and properties here. In our example, `(Q1860)` is `English`, a language: [Q1860](https://www.wikidata.org/wiki/Q1860).
+
+Each item in [Wikidata]() can be easily found by its URI/URL: concatenate `https://www.wikidata.org/wiki/` with the item idenfier (i.e. `Q1860`): [https://www.wikidata.org/wiki/Q1860](https://www.wikidata.org/wiki/Q1860). Try it out with different `Q identifiers`!
+
+Labels is a list of `labels` in all available languages:
+
+```{r echo = T, eval = T}
+head(item[[1]]$labels, 5)
+```
+Wikidata is **very much** multilingual, as you can see.
+
+Let's grab all of the labels from this `item`:
+
+```{r echo = T, eval = T}
+labels <- lapply(item[[1]]$labels, function(x) {
+  d <- unlist(x)
+  data.frame(language = d[1],
+             value = d[2], 
+             stringsAsFactors = F)
+})
+labels <- rbindlist(labels)
+print(labels)
+```
+
+#### 1.1.2 More details on the representation of items
+
+Why so complicated? Well, because Wikidata is a data structure of immense complexity. I know it doesn't help much just saying that.
+Let's take a look at the structure of out `item` in more detail:
+
+```{r echo = T, eval = T}
+labs <- item[[1]]$labels
+class(labs)
+```
+
+A list again. Now:
+
+```{r echo = T, eval = T}
+head(labs, 3)
+```
+
+```{r echo = T, eval = T}
+lab <- labs[[1]]
+class(lab)
+print(lab)
+```
+
+```{r echo = T, eval = T}
+unlist(lab)
+```
+
+Now let's review this item's _descriptions_. In Wikidata, two different items must have **different identifiers**, **can have the same label**, but **must not have the same description**. So: item descriptions, in all available languages:
+
+```{r echo = T, eval = T}
+descriptions <- lapply(item[[1]]$descriptions, function(x) {
+  d <- unlist(x)
+  data.frame(language = d[1],
+             value = d[2], 
+             stringsAsFactors = F)
+})
+descriptions <- rbindlist(descriptions)
+print(descriptions)
+```
+**Alias:** "also known as..."  Item aliases, in all available languages:
+
+```{r echo = T, eval = T}
+aliases <- lapply(item[[1]]$aliases, function(x) {
+  d <- unlist(x)
+  data.frame(language = d[1],
+             value = d[2], 
+             stringsAsFactors = F)
+})
+aliases <- rbindlist(aliases)
+print(aliases)
+```
+
+Item's **sitelinks** are the the _titles of the respective Wikipedia pages_ in all available Wikipedias and other projects (i.e. all Wikipedias that have an article for the respective item):
+
+```{r echo = T, eval = T}
+sitelinks <- lapply(item[[1]]$sitelinks, function(x) {
+  d <- unlist(x)
+  data.frame(project = d[1],
+             value = d[2], 
+             stringsAsFactors = F)
+})
+sitelinks <- rbindlist(sitelinks)
+print(sitelinks)
+```
+
+#### 1.1.3 Claims: knowledge through properties (i.e. predicates)
+
+Now, for the main course: **claims**. What are **claims**?
+
+```{r echo = T, eval = T}
+# - list of all claims for English (Q1860) 
+claims <- names(item[[1]]$claims)
+class(claims)
+head(claims, 20)
+```
+Because we already now that everything prefixed with `P` in Wikidata is a _property_, we can infere that this is the list of properties (i.e. predicates) used to describe this item in Wikidata. The {WikidataR} package exposes a handy function: `get_property()`.
+
+So what is `P4132`? Use `WikidataR::get_property()`:
+
+```{r echo = T, eval = T}
+prop <- get_property(id = 'P4132')
+prop[[1]]$labels$en$value
+```
+Now we know that `Q1860`, that stands for `English` as a language in Wikidata, is described by the property `linguistic typology` which is `P4132` in Wikidata. To find a property page in Wikidata: concatenate `https://www.wikidata.org/wiki/Property:` with the property idenfier (i.e. `P4132`): [https://www.wikidata.org/wiki/Property:P4132](https://www.wikidata.org/wiki/Property:P4132). Try it out with different `P identifiers`!
+
+More on properties of `Q1860 (English)`. Its `datatype` is:
+
+```{r echo = T, eval = T}
+prop[[1]]$datatype
+```
+which means that its value is also an _item_. What do we have for `P4132 linguistic typology` of `Q1860 (English)` in Wikidata?
+
+```{r echo = T, eval = T}
+item[[1]]$claims$P4132
+```
+Ooops. So, **mainsnak** is where the data live, remember this!
+
+Let's see:
+
+```{r echo = T, eval = T}
+item[[1]]$claims$P4132$mainsnak$datavalue$value
+```
+To find out about the `P4132 linguistic typology` of `Q1860 (English)` in Wikidata, we
+
+- get all `id` values from `item[[1]]$claims$P4132$mainsnak$datavalue$value` - the `Q identifiers` that represent the items that satisfy `?value` in the following pseudo-SPARQL query: `"Q1860 (English)" "P4132 linguistic typology" "?value"`, and then
+- grab all the corresponding items and their labels with `get_item()` from Wikidata:
+
+```{r echo = T, eval = T}
+values <- item[[1]]$claims$P4132$mainsnak$datavalue$value$id
+print(values)
+```
+Of course we can use `get_item()` to fetch multiple items at once:
+
+```{r echo = T, eval = T}
+values <- get_item(values)
+values <- sapply(values, function(x) {
+  x$labels$en$value
+})
+print(values)
+```
+So we have:
+
+```{r echo = T, eval = T}
+enLingTypo <- data.frame(ID = item[[1]]$id, 
+                         language = item[[1]]$labels$en$value, 
+                         typology = values, 
+                         stringsAsFactors = F)
+print(enLingTypo)
+```
+
+Let's describe English language by Wikidata classes to which it belongs. 
+**Question:** of which Wikidata classes is `English (Q1860)` an [`instance of (P31)`](https://www.wikidata.org/wiki/Property:P31)?
+
+We first need to study the structure of Wikidata **claims**.
+
+```{r echo = T, eval = T}
+claims <- item[[1]]$claims
+class(claims)
+```
+
+```{r echo = T, eval = T}
+claims[[1]]
+```
+Let's take a look at the _mainsnak_ where the data live:
+
+```{r echo = T, eval = T}
+claims[[1]]$mainsnak
+```
+
+Ooops - do we have a nested `data.frame` here?
+
+```{r echo = T, eval = T}
+str(claims[[1]]$mainsnak)
+```
+
+Oh yes we do. And we do not like nested data frames in R. 
+Now, `jsonlite::flatten()` does the job:
+
+```{r echo = T, eval = T}
+flattenedClaim <- flatten(claims[[1]]$mainsnak)
+str(flattenedClaim)
+```
+
+Please mind the new `colnames()`:
+
+```{r echo = T, eval = T}
+colnames(flattenedClaim)
+```
+and yes, `.` is a valid character in an R `data.frame` column name.
+
+```{r echo = T, eval = T}
+flattenedClaim$datavalue.value
+```
+
+Now, what does this claim tell us about English?
+
+```{r echo = T, eval = T}
+t(flattenedClaim)
+```
+
+The `snaktype` field describes that this piece of data is some `value`. The `hash` field is not interesting at this point for us. The `property` field carries the Wikidata property that this statement uses as its predicate in a triple: `Subject (English)`-`P2924`-`1821310`, where the value of `1821310` is found in the `datavalue.value` field and is of type `string` (described by the `datavalue.type` field). What is `P2924`?
+
+```{r echo = T, eval = T}
+claimProperty <- get_property('P2924')
+claimProperty
+```
+
+So, we have learned that `1821310` is the ID of the entry for the English language in the [Great Russian Encyclopedia](https://en.wikipedia.org/wiki/Great_Russian_Encyclopedia), and we have also learned that Wikidata uses the [`P2924`](https://www.wikidata.org/wiki/Property:P2924) property as a [Wikidata External identifier](https://www.wikidata.org/wiki/Wikidata:External_identifiers) to point to this resource! 
+
+**Note.** External identifiers are a very important set of properties in Wikidata: through them, Wikidata connects to a world of databases and positions itself as a knowledge and information hub. In other words, if you can find it in Wikidata, than you can reach it as many other databases that Wikidata has and External idenfitifer for!
+
+There are many more complex claims than this one, however. How many people speak English in the World?
+
+#### 1.1.4 How many speak English?
+
+The relevant Wikidata property for this is [`P1098 number of speakers`](https://www.wikidata.org/wiki/Property:P1098).
+
+```{r echo = T, eval = T}
+numSpeakers <- claims[[which(names(claims) == "P1098")]]
+str(numSpeakers)
+```
+
+Oh no. Ok, let's dive into it:
+
+```{r echo = T, eval = T}
+numSpeakers <- jsonlite::flatten(numSpeakers, recursive = T)
+print(numSpeakers)
+```
+It is now flattened recursively  by `jsonlite::flatten()`:
+
+```{r echo = T, eval = T}
+colnames(numSpeakers)
+```
+
+First let's extract the statement [ranks](https://www.wikidata.org/wiki/Help:Ranking):
+
+```{r echo = T, eval = T}
+ranks <- numSpeakers$rank
+ranks
+```
+
+We now see that we have found four (4) statements on `P1098 number of speakers` for English.
+What is this: `qualifiers-order`?
+
+```{r echo = T, eval = T}
+numSpeakers$`qualifiers-order`
+```
+
+Now we now that each statement for `P1098 number of speakers` for English always has two additional qualifiers: [`P585 point in time`](https://www.wikidata.org/wiki/Property:P585) and [`P518 applies to part`](https://www.wikidata.org/wiki/Property:P518). We need to find their values too.
+
+```{r echo = T, eval = T}
+colnames(numSpeakers)
+```
+
+First, what data are stated as candidate number of speakers measure for English? 
+
+```{r echo = T, eval = T}
+numSpeakersData <- data.frame(value = numSpeakers$mainsnak.datavalue.value.amount,
+                              unit = numSpeakers$mainsnak.datavalue.value.unit)
+print(numSpeakersData)
+```
+
+Now, how are these five numbers different? The qualifiers carry that information, the `qualifiers.P585` field:
+
+```{r echo = T, eval = T}
+class(numSpeakers$qualifiers.P585)
+str(numSpeakers$qualifiers.P585)
+qualifier_P585 <- sapply(numSpeakers$qualifiers.P585, 
+                         function(x) {
+                           return(x$datavalue$value$time)
+                         })
+qualifier_P585
+```
+For `P518 (applies to part)`:
+
+```{r echo = T, eval = T}
+qualifier_P518 <- lapply(numSpeakers$qualifiers.P518, 
+                         function(x) {
+                           return(x$datavalue$value$id)
+                         })
+# - sapply() did not deliver a vector in this case, so:
+qualifier_P518 <- as.character(qualifier_P518)
+qualifier_P518
+```
+For `P585 (point in time)`, we need to grab `$datavalue$value$time`:
+
+```{r echo = T, eval = T}
+qualifier_P585 <- sapply(numSpeakers$qualifiers.P585, 
+                         function(x) {
+                           return(x$datavalue$value$time)
+                         })
+qualifier_P585
+```
+
+We have the full information on the number of speakers of English from Wikidata now:
+
+```{r echo = T, eval = T}
+nspeakers <- data.frame(P518 = qualifier_P518, 
+                        P585 = qualifier_P585, 
+                        data = numSpeakersData$value,
+                        rank = ranks,
+                        stringsAsFactors = F)
+colnames(nspeakers) <- c('applies to part (518)', 
+                         'point in time (585)', 
+                         'data',
+                         'rank')
+print(nspeakers)
+```
+
+It is not over yet:
+
+```{r echo = T, eval = T}
+nspeakers$data <- as.numeric(nspeakers$data)
+print(nspeakers)
+```
+
+And now the time: year extracted.
+
+```{r echo = T, eval = T}
+nspeakers$`point in time (585)` <- substr(nspeakers$`point in time (585)`, 2, 5)
+print(nspeakers)
+```
+
+So, how many English speakers in the World? We have two values, `753359540` and `379007140`, both of `preferred` rank?
+Well, we've forgot about `P518 (applies to part)`, didn't we...
+
+```{r echo = T, eval = F}
+parts <- get_item(nspeakers$`applies to part (518)`)
+```
+
+> Error in query(url, "pcontent", clean_response, query_param = query_param, : The API returned an error: missingtitle - The page you specified doesn't exist.
+
+Error: because there is a `NULL` in ``nspeakers$`applies to part (518)``; use only the first four entries in ``nspeakers$`applies to part (518)``:
+
+```{r echo = T, eval = T}
+parts <- get_item(nspeakers$`applies to part (518)`[1:4])
+nspeakers$ID <- 1:dim(nspeakers)[1]
+parts <- get_item(nspeakers$`applies to part (518)`[1:4])
+parts <- sapply(parts, function(x) {
+  x$labels$en$value
+})
+parts <- data.frame(ID = 1:4, 
+                    parts = parts, stringsAsFactors = F)
+nspeakers <- nspeakers %>% 
+  left_join(parts, "ID")
+print(nspeakers)
+```
+
+Finally: in 2019, English had `379,007,140` speakers as a first and `753,359.540` as a second language!
+
+### 1.2 The Wikidata MediaWiki API
+
+You really need to browse the [Wikidata MediaWiki API documentation](https://www.wikidata.org/w/api.php) **carefully**. 
+We will focus on the following modules: `wbgetentities` and `wbsearchentities`.
+
+### 1.2.1 The `wbgetentities` module: fetch items in batches
+
+*Example.* `wbgetentities`
+
+```{r echo = T, eval = T}
+# - Wikidata MediaWiki API prefix
+APIprefix <- 'https://www.wikidata.org/w/api.php?action=wbgetentities&'
+# - Random Wikidata item
+ids <- paste0("Q", round(runif(10, 1, 1000)))
+ids <- paste0(ids, collapse = "|")
+print(ids)
+```
+
+We use "|" to separate the items that we want to query the API about. Now let's compose the API call:
+
+```{r echo = T, eval = T}
+# - Compose query
+query <- paste0(APIprefix, 
+                    'ids=', ids, '&',
+                    'props=labels&languages=en&sitefilter=wikidatawiki&format=json')
+cat(query)
+```
+API call:
+
+```{r echo = T, eval = T}
+# - contact the API
+result <- GET(url = URLencode(query))
+# - raw to char
+result <- rawToChar(result$content)
+# - to JSON:    
+result <- fromJSON(result)
+# - parse JSON:
+itemLabels <- unlist(lapply(result$entities, function(x) {
+  x$labels$en$value
+  }))
+itemLabels <- data.frame(entity_id = names(itemLabels),
+                         label = itemLabels,
+                         stringsAsFactors = F)
+print(itemLabels)
+```
+
+### 1.2.2 The `wbsearchentities` module: search Wikidata
+
+*Example.* `wbsearchentities`: everything about Functional Programming
+
+```{r echo = T, eval = T}
+# - Wikidata MediaWiki API
+APIprefix <- 'https://www.wikidata.org/w/api.php?action=wbsearchentities&'
+# - search query
+searchQuery <- "functional programming"
+# - Compose query
+query <- paste0(APIprefix, 
+                    'search=', searchQuery, '&',
+                    'language=en&strictlanguage=true&format=json')
+cat(query)
+```
+
+```{r echo = T, eval = T}
+# - contact the API
+result <- GET(url = URLencode(query))
+# - raw to char
+result <- rawToChar(result$content)
+# - to JSON:    
+searchResult <- fromJSON(result, simplifyDataFrame = T)
+# - fetch labels and descriptions
+searchResult <- get_item(searchResult$search$id)
+# - labels and descriptions
+descriptions <- sapply(searchResult, function(x) {
+  paste0(x$labels$en$value, ": ", x$descriptions$en$value)
+})
+print(descriptions)
+```
+
+### 1.2.3 {WikidataR} search functionality
+
+Let's briefly take a look at `WikidataR::find_item()` function, similar to the `wbsearchentities` API module:
+
+```{r echo = T, eval = T}
+searchTerm <- 'programming language'
+searchResults <- WikidataR::find_item(search_term = searchTerm,
+                                      language = "en")
+print(searchResults)
+```
+```{r echo = T, eval = T}
+length(searchResults)
+```
+Structure:
+
+```{r echo = T, eval = T}
+str(searchResults[[1]])
+```
+`WikidataR::find_item()` is very useful, especially in relation to any Information Retrieval tasks (e.g. Word-Sense Disambiguation, Entity Linking and similar...).
+
+## 2. Accessing Wikidata from R: SPARQL
+
+[SPARQL](https://en.wikipedia.org/wiki/SPARQL) is a language on its own:
+
+"SPARQL (pronounced \"sparkle\", a recursive acronym for SPARQL Protocol and RDF Query Language) is an RDF query language—that is, a semantic query language for databases—able to retrieve and manipulate data stored in Resource Description Framework (RDF) format. It was made a standard by the RDF Data Access Working Group (DAWG) of the World Wide Web Consortium, and is recognized as one of the key technologies of the semantic web.[citation needed] On 15 January 2008, SPARQL 1.0 became an official W3C Recommendation, and SPARQL 1.1 in March, 2013." 
+Source: [Wikipedia](https://en.wikipedia.org/wiki/SPARQL), retrieved on: `2019/09/09`.
+
+Wikidata maintains a very nice [SPARQL tutorial](https://www.wikidata.org/wiki/Wikidata:SPARQL_tutorial) and also provides tons of [query examples](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/queries/examples).
+
+### 2.1 SPARQL via WDQS (Wikidata Query Service)
+
+Please take a look at the following page: [A gentle introduction to the Wikidata Query Service](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/A_gentle_introduction_to_the_Wikidata_Query_Service).
+
+All functional programming languages in Wikidata:
+
+```{r echo = T, eval = T}
+# - NOTE. The Wikidata SPARQL Tutorial: https://www.wikidata.org/wiki/Wikidata:SPARQL_tutorial
+# - WDQS endPoint:
+endPointURL <- "https://query.wikidata.org/bigdata/namespace/wdq/sparql?format=json&query="
+# - query:
+# - NOTE. For the SELECT wikibase:label "magic", see:
+# - https://en.wikibooks.org/wiki/SPARQL/SERVICE_-_Label
+query <- 'SELECT ?item ?itemLabel WHERE {
+  ?item wdt:P31 wd:Q9143 .
+   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}'
+res <- GET(url = paste0(endPointURL, URLencode(query)))
+res$status_code
+```
+
+```{r echo = T, eval = T}
+# - decode:
+res <- rawToChar(res$content)
+substr(res, 1, 2000)
+```
+
+```{r echo = T, eval = T}
+# - from JSON:
+res <- fromJSON(res)
+class(res)
+```
+
+```{r echo = T, eval = T}
+items <- res$results$bindings$item
+labels <- res$results$bindings$itemLabel
+```
+
+```{r echo = T, eval = T}
+# - inspect result:
+head(items)
+```
+
+```{r echo = T, eval = T}
+# - inspect result:
+head(labels)
+```
+
+```{r echo = T, eval = T}
+# - data.frame:
+programmingLanguages <- data.frame(items = gsub("http://www.wikidata.org/entity/", "", items$value), 
+                                   labels = labels$value, 
+                                   stringsAsFactors = F)
+print(programmingLanguages)
+```
+
+### 2.2 SPARQL via {WikidataQueryServiceR}
+
+Simplifies the life a bit:
+
+```{r echo = T, eval = T}
+sparqlQuery <- 'SELECT ?language ?languageLabel 
+                   WHERE { 
+                    BIND(wd:Q9143 AS ?programmingLanguage) .
+                    ?language wdt:P31/wdt:P279* ?programmingLanguage .
+                    SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+                   }'
+progLanguages <- query_wikidata(sparqlQuery)
+print(progLanguages)
+```
+
+**Note.** `WikidataQueryServiceR::query_wikidata()` is _vectorized_. Happy? Note also that there are constraints and limits on how many queries and how length query processing times will be allowed on the Wikidata Query Service.
+
+## Resources
+
+- [Wikidata:Introduction](https://www.wikidata.org/wiki/Wikidata:Introduction)
+- [Wikibase/DataModel/Primer](https://www.mediawiki.org/wiki/Wikibase/DataModel/Primer) - **very important**: you will not be able to utilize Wikidata up to its full potential if you do not study the data model thoroughly. Reminder: while [Wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page) is a data set (items + ontology), [Wikibase](https://wikiba.se/) is a MediaWiki extension running it.  
+- [Wikibase JSON Data Model](https://www.mediawiki.org/wiki/Wikibase/DataModel/JSON) - very important for understanding the results that you get from the API, the WDQS, and in any attempt to process the Wikidata dump - because you will be mainly doing it through the JSON serialization.
+- [Wikidata Dumps](https://www.wikidata.org/wiki/Wikidata:Database_download): you want JSON, of course.
+- [Wikidata Query Service (WDQS)](https://query.wikidata.org/)
+- [WDQS User Manual](https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual)
+- [Wikidata Query Help Pages](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help)
+- [Wikidata:SPARQL tutorial](https://www.wikidata.org/wiki/Wikidata:SPARQL_tutorial)
+- [Wikidata:SPARQL query service/A gentle introduction to the Wikidata Query Service](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/A_gentle_introduction_to_the_Wikidata_Query_Service)
+- SPARQL query examples for Wikidata: 
+   - [Wikidata:SPARQL query service/queries/examples](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/queries/examples)
+   - [Wikidata:SPARQL query service/queries](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/queries)
+   - [Wikidata built-in prefixes](https://en.wikibooks.org/wiki/SPARQL/Prefixes)
+
+***
+Goran S. Milovanović, Phd
+
+DataKolektiv, 2020.
+
+contact: goran.milovanovic@datakolektiv.com
+
+[![](img/DK_Logo_100.png)](https://www.datakolektiv.com)
+
+***
+License: [GPLv3](http://www.gnu.org/licenses/gpl-3.0.txt)
+This Notebook is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+This Notebook is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+You should have received a copy of the GNU General Public License along with this Notebook. If not, see <http://www.gnu.org/licenses/>.
+
+***
+
+
