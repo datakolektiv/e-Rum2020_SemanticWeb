@@ -36,6 +36,8 @@ We have some installations to complete first. This should take no time at all.
 
 ### 0.1 Install {rdflib} + dependencies
 
+#### Ubuntu/Debian
+
 For **Ubuntu/Debian**, open the terminal and install `librdf0-dev`:
 
 `sudo apt-get install librdf0-de`
@@ -43,6 +45,10 @@ For **Ubuntu/Debian**, open the terminal and install `librdf0-dev`:
 so that {rdflib} can rely on [{redland}](https://cran.r-project.org/web/packages/redland/index.html) - an R interface to the [Redland RDF C library](http://librdf.org/docs/api/index.html).
 
 Then: `install.packages('rdflib')` from your R session. Also, please `install.packages('jsonld')` - the [{jsonld}](https://cran.r-project.org/web/packages/jsonld/index.html) package that parses [JSON-LD](https://en.wikipedia.org/wiki/JSON-LD), a semantic web flavour of [JSON](https://en.wikipedia.org/wiki/JSON) (JSON-LD == JSON for Linked Data).
+
+#### Windows
+
+Windows users should be able to install _everything_ by just doing `install.packages()`. When installing {rdflib} accept installing from source when prompted.
 
 ### [OPTIONAL] 0.2 Install {rrdf} + dependencies
  
