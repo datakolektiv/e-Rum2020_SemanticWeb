@@ -3,7 +3,7 @@ e-Rum 2020 Workshop: Semantic Web in R for Data Scientists
 
 ![](_img/eRum2020.png)
 
-<span style="font-size:70%;">Photo: MilanoR Meetup, June 25, 2019: Information Retrieval: Semantic Web Technologies and Wikidata from R, Microsoft House</span>
+<span style="font-size:55%;">Photo: MilanoR Meetup, June 25, 2019: <i>Information Retrieval: Semantic Web Technologies and Wikidata from R</i>, Microsoft House</span>
 
 
 This workshop will offer a hands-on approach to Semantic Web technologies in R by exemplifying how to work with Wikidata and DBpedia in different ways. Attendees of the workshop should be R developers who understand the typical ways of dealing with familiar data structures like dataframes and lists. The workshop will be supported by a well documented, readable code in a dedicated GitHub repo. 
