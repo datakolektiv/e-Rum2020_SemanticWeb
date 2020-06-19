@@ -750,10 +750,6 @@ citiesMap <- cbind(citiesMap, coordinates) %>%
 citiesMap$lat <- round(as.numeric(coordinates$lat), 2)
 citiesMap$lng <- round(as.numeric(coordinates$lng), 2)
 leaflet() %>%
-        addProviderTiles(providers$CartoDB.Positron) %>% 
-        addCircleMarkers(lng = citiesMap$lng,
-                         lat = citiesMap$lat)
-leaflet() %>%
   addProviderTiles(providers$CartoDB.Positron) %>%
   addMarkers(data = cities,
              lng = citiesMap$lng,
@@ -763,7 +759,6 @@ leaflet() %>%
                             "Lon: ", citiesMap$lat, '<br>'),
                       clusterOptions = markerClusterOptions()
   )
-
 ```
 
 ### 4.2 DBpedia through {SPARQL}
