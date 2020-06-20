@@ -82,7 +82,11 @@ Install {visNetwork} for graph visualizations using [vis.js](http://visjs.org/) 
 `install.packages('visNetwork')`
 `install.packages('leaflet')`
 
-### 0.6 Setup
+### 0.6 Recommended reading
+
+[A tidyverse lover’s intro to RDF](https://cran.r-project.org/web/packages/rdflib/vignettes/rdf_intro.html#fn2) - Carl Boettiger's [{rdflib}](https://cran.r-project.org/web/packages/rdflib/index.html) vignette. This notebook expands upon what Carl Boettiger's excellent vignette explains about {rdflib}.  
+
+### 0.7 Setup
 
 **Note.** The following chunk loads the packages and defines the project directory tree.
 
@@ -102,10 +106,6 @@ library(scales)
 library(visNetwork)
 library(leaflet)
 ```
-
-### 0.7 Recommended reading
-
-[A tidyverse lover’s intro to RDF](https://cran.r-project.org/web/packages/rdflib/vignettes/rdf_intro.html#fn2) - Carl Boettiger's [{rdflib}](https://cran.r-project.org/web/packages/rdflib/index.html) vignette. This notebook expands upon what Carl Boettiger's excellent vignette explains about {rdflib}.  
 
 ## 1. Transform a `dataframe` into an RDF adherent graph representation and back
 
@@ -129,7 +129,7 @@ car_triples <-
   pivot_longer(-model, 
                names_to = "attribute", 
                values_to = "value")
-head(car_triples, 10)
+print(car_triples)
 ```
 
 Still I don't want my Subject-Predicate-Object triples to go under `Model`, `attribute`, and `value`, and moreover I do not want the data in the `model` column to play the Subject role. I want to have one **concept**, a sort of an **ID**, identified by an [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) to represent the "things" here, and then `model` will be just another predicate to describe things. 
@@ -143,7 +143,7 @@ car_triples_0 <-
   rownames_to_column("subject")
 car_triples_0$subject <- paste0("http://e-rum2020_example.com/mtcars#", 
                                 car_triples_0$model)
-head(car_triples_0, 10)
+print(car_triples_0)
 ```
 
 Now we have an URI for each `model`. Next, add the predicate _model_ to the representation, and rename to Subject-Predicate-Object:
@@ -153,7 +153,7 @@ Now we have an URI for each `model`. Next, add the predicate _model_ to the repr
 car_triples_0$predicate <- "model"
 colnames(car_triples_0) <- c("subject", "object", "predicate")
 car_triples_0 <- car_triples_0[, c("subject", "predicate", "object")]
-head(car_triples_0, 10)
+print(car_triples_0)
 ```
 
 Finally, let's `left_join` the `car_triples_0` with the URIs to `car_triples`, introduce Subject-Predicate-Object column names, and `rbind()` the the `car_triples` set of triples with `car_triples_0` where the values for the _model_ predicate is stored.
@@ -171,7 +171,7 @@ car_triples <- car_triples[, c("subject", "predicate", "object")]
 # - put it together:
 car_triples <- rbind(car_triples, car_triples_0)
 rm(car_triples_0)
-head(car_triples, 10)
+print(car_triples)
 ```
 
 We need URIs for the predicates too:
@@ -180,7 +180,7 @@ We need URIs for the predicates too:
 # - Predicate URIs
 car_triples$predicate <- paste0("http://e-rum2020_example.com/mtcars#",
                                 car_triples$predicate)
-head(car_triples, 10)
+print(car_triples)
 ```
 
 In the `object` column we now find only values. We want to add the RDF compliant datatype descriptors to those, and RDF borrows its data types from the [XML Schema](https://www.w3.org/TR/xmlschema11-2/). I will parse the values in the `object` column with `regex` to identify the types. **Note.** This feels a bit uncomfortable, I know: R can parse a set of plain values and determine their XML Schema datatype for you, as we will see later. 
@@ -195,7 +195,7 @@ car_triples$object <- sapply(car_triples$object,
                                if (grepl('^[[:digit:]]+$', x)) {
                                  return(paste0('"', x, '"', '^^', '<http://www.w3.org/2001/XMLSchema#integer>'))
                                } else if (grepl('^[[:digit:]]+\\.[[:digit:]]+$|^\\.[[:digit:]]+$', x)) {
-                                 return(paste0('"', x, '"', '^^', '<http://www.w3.org/2001/XMLSchema#double>'))
+                                 return(paste0('"', x, '"', '^^', '<http://www.w3.org/2001/XMLSchema#decimal>'))
                                } else if (grepl('[[:alpha:]]', x)) {
                                  return(paste0('"', x, '"', '^^', '<http://www.w3.org/2001/XMLSchema#string>'))
                                }
@@ -833,6 +833,7 @@ leaflet() %>%
    - [Wikidata:SPARQL query service/queries/examples](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/queries/examples)
    - [Wikidata:SPARQL query service/queries](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/queries)
 - [A tidyverse lover’s intro to RDF](https://cran.r-project.org/web/packages/rdflib/vignettes/rdf_intro.html#fn2) - Carl Boettiger's [{rdflib}](https://cran.r-project.org/web/packages/rdflib/index.html) vignette
+- [Linked Open Data on DataHub.io](https://datahub.io/collections/linked-open-data)
 
 ***
 Goran S. Milovanović, Phd
