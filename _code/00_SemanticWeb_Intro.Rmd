@@ -183,7 +183,7 @@ car_triples$predicate <- paste0("http://e-rum2020_example.com/mtcars#",
 head(car_triples, 10)
 ```
 
-In the `object` column we now find only values. We want to add the RDF compliant datatype descriptors to those, and RDF borrows its data types from the [XML Schema](https://www.w3.org/TR/xmlschema11-2/). I will parse the values in the `object` column with `regex` to identify the types. **Note.** This feels a bit uncomfortable, I know: _sometimes_ R can parse a set of plain values and determine their XML Schema datatype for you, as we will see later. 
+In the `object` column we now find only values. We want to add the RDF compliant datatype descriptors to those, and RDF borrows its data types from the [XML Schema](https://www.w3.org/TR/xmlschema11-2/). I will parse the values in the `object` column with `regex` to identify the types. **Note.** This feels a bit uncomfortable, I know: R can parse a set of plain values and determine their XML Schema datatype for you, as we will see later. 
 
 ```{r echo = T, message = F}
 # - Datatypes defined in XML Schema 1.1 Part 2: Datatypes [XMLSCHEMA11-2]: 
@@ -335,7 +335,7 @@ triplestore <- as_rdf(
 print(triplestore)
 ```
 
-**Note.** We can now see an automatic type conversion from R to `xsd:`, however it is not perfect.
+**Note.** We can now see an automatic type conversion from R to `XML` datatypes as used in RDF from [XML Schema Part 2: Datatypes Second Edition](https://www.w3.org/TR/2004/REC-xmlschema-2-20041028/)
 
 ### 2.2 RDF serialization from {rdflib}: JSON-LD
 
@@ -826,6 +826,7 @@ leaflet() %>%
 ## Resources
 
 - [RDF 1.1 Primer (W3C Working Group Note 24 June 2014)](https://www.w3.org/TR/rdf11-primer/)
+- [LINKED DATA from W3C](https://www.w3.org/standards/semanticweb/data)
 - [Wikidata:SPARQL tutorial](https://www.wikidata.org/wiki/Wikidata:SPARQL_tutorial)
 - [Wikidata:SPARQL query service/A gentle introduction to the Wikidata Query Service](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/A_gentle_introduction_to_the_Wikidata_Query_Service)
 - SPARQL query examples for Wikidata: 

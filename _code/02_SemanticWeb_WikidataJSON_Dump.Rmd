@@ -1,0 +1,303 @@
+---
+title: e-Rum2020 - Semantic Web in R for Data Scientists
+author:
+  name: Goran S. Milovanović, Phd
+  affiliation: DataKolektiv, Chief Scientist & Owner, Wikimedia Deutschland, Data Scientist
+date: "`r format(Sys.time(), '%Y %m %d')`"
+abstract: 
+output:
+  html_notebook:
+    code_folding: show
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+    toc_depth: 5
+  html_document:
+    toc: yes
+    toc_depth: 5
+---
+
+[![](img/DK_Logo_100.png)](https://www.datakolektiv.com)
+
+***
+# Notebook 02: Wikidata JSON dump processing from R
+
+**Feedback** should be send to `goran.milovanovic@datakolektiv.com`. 
+
+These notebooks accompany the e-Rum2020: Semantic Web in R for Data Scientists Workshop, 2020/06/20.
+
+**To obtain these notebooks:** `git clone` [datakolektiv/e-Rum2020_SemanticWeb](https://github.com/datakolektiv/e-Rum2020_SemanticWeb).
+
+***
+
+## 0. Prerequisites/Installations
+
+We have some installations to complete first. This should take no time at all.
+
+### 0.1 Install {rdflib} + dependencies
+
+#### Ubuntu/Debian
+
+For **Ubuntu/Debian**, open the terminal and install `librdf0-dev`:
+
+`sudo apt-get install librdf0-de`
+
+so that {rdflib} can rely on [{redland}](https://cran.r-project.org/web/packages/redland/index.html) - an R interface to the [Redland RDF C library](http://librdf.org/docs/api/index.html).
+
+Then: `install.packages('rdflib')` from your R session. Also, please `install.packages('jsonld')` - the [{jsonld}](https://cran.r-project.org/web/packages/jsonld/index.html) package that parses [JSON-LD](https://en.wikipedia.org/wiki/JSON-LD), a semantic web flavour of [JSON](https://en.wikipedia.org/wiki/JSON) (JSON-LD == JSON for Linked Data).
+
+#### Windows
+
+Windows users should be able to install _everything_ by just doing `install.packages()`. When installing {rdflib} accept installing from source when prompted.
+
+### [OPTIONAL] 0.2 Install {rrdf} + dependencies
+ 
+Following the instructions from [https://github.com/egonw/rrdf](https://github.com/egonw/rrdf)
+
+You will need [{devtools}](https://cran.r-project.org/web/packages/devtools/index.html) if not already installed (and if not... `install.packages('devtools')`), and [{rJava}](https://cran.r-project.org/web/packages/rJava/index.html) (`install.packages('rJava')`).
+
+Then: 
+
+`devtools::install_github("egonw/rrdf", subdir="rrdflibs")`
+`devtools::install_github("egonw/rrdf", subdir="rrdf", build_vignettes = FALSE)`
+
+This will install the [{rrdf}](https://github.com/egonw/rrdf) package to handle RDF + [{rrdflibs}](https://github.com/egonw/rrdf/tree/master/rrdflibs): the [Apache Jena](https://jena.apache.org/) libraries.
+Long story shor: Apache Jena is _"... a free and open source Java framework for building Semantic Web and Linked Data applications"_, while {rrdf} wraps R around it. We will rely more on the {rdflib} package (instaled in section `0.1`) in this Notebook ({rrdf} is not on CRAN anymore, and I have no idea if it is maintained anymore). However, Apache Jena itself is very popular.
+
+### 0.3 {jsonlite} to parse JSON and {SPARQL}
+
+`install.packages('jsonlite')`
+`install.packages('SPARQL')`
+
+### 0.4 Wikidata and Wikipedia related packages
+
+`install.packages('WikidataR')`
+`install.packages('WikidataQueryServiceR')`
+`install.packages('WikipediR')`
+
+### 0.5 {visNetwork} for graph visualizations and {leaflet} for maps
+
+Install {visNetwork} for graph visualizations using [vis.js](http://visjs.org/) javascript library:
+
+`install.packages('visNetwork')`
+`install.packages('leaflet')`
+
+### 0.6 Setup
+
+**Note.** The following chunk loads the packages and defines the project directory tree.
+
+```{r echo = T, message = F}
+# - Directory tree
+dataDir <- '../_data/'
+queryDir <- '../_queries/'
+analyticsDir <- '../_analytics/' 
+
+```
+
+## 1. Accessing Wikidata from R: the API and its R client library for Wikidata
+
+First you probably want to take a look at [Wikidata:Database_download](https://www.wikidata.org/wiki/Wikidata:Database_download):
+
+> There are several different kinds of data dumps available. Note that while JSON and RDF dumps are considered stable interfaces, XML dumps are not. Changes to the data formats used by stable interfaces are subject to the [Stable Interface Policy](https://www.wikidata.org/wiki/Wikidata:Stable_Interface_Policy).
+
+To put it in a nutshell: Wikidata dumps are simply copies of *all* data available in Wikidata at some point in time. The fact that there are different dumps reflects only the fact that there are different file formats which can describe what is in a database. The recommended dump format to use for Wikidata is [JSON](https://en.wikipedia.org/wiki/JSON), while you can also rely on the [XML](https://en.wikipedia.org/wiki/XML) or [RDF](https://en.wikipedia.org/wiki/Resource_Description_Framework) dumps if you wish.
+
+The existence of the dumps means that there is a beautiful thing that you can do: namely, you can extract *all* data for a particular set of items that you can *arbitrarily* define. For example, you might need to extract all items with geo-coordinates (and there are millions of them in Wikidata) alongisde their IDs and English or Serbian labels. You might need to extract all items that have the property [sex or gender (P21)](https://www.wikidata.org/wiki/Property:P21), the value of that property, the profession of the respective individual, or any other data on those individuals that you might be interested in. In other words, when you need tons of data from Wikidata, and have a specified information schema that you want to access and use in your future analyses or projects, the dumps are the way to go. It is not efficient (and might be impossible as well) to go for SPARQL via [WDQS](https://query.wikidata.org/) or [Mediawiki API](https://www.wikidata.org/w/api.php) for heavy tasks like these. 
+
+### 1.1 WD JSON Dump
+
+In the following section we will focus on the [JSON](https://en.wikipedia.org/wiki/JSON) database dump. The JSON dump lives here:
+
+[https://dumps.wikimedia.org/wikidatawiki/entities/](https://dumps.wikimedia.org/wikidatawiki/entities/)
+
+and typically the file that you are looking for is the latest dump: `latest-all.json.bz2`.
+
+The `.bz2` extension means that the file is compressed with [bzip2](https://en.wikipedia.org/wiki/Bzip2). Don't worry, the `bzip2` compression can be read from base R: you will not need to decompress the whole dump file to be able to process it.
+
+Once again: in order to learn *how* to extract *exactly the data that you need* you will need to study the Wikidata JSON data model (from: [Wikibase/DataModel/JSON](https://www.mediawiki.org/wiki/Wikibase/DataModel/JSON)) and probably experiment on several items first from [WikidataR](https://cran.r-project.org/web/packages/WikidataR/index.html). Your experimentation should result in a clear understanding of what properties, qualifiers, labels, etc. exactly do you need to extract, as well as what the shape of the data set will be - in order to be able to efficiently map the Wikidata JSON structure onto the respective structure in R. While it might sound complicated in the beginning, it turns out be quite feasible in practice. 
+
+**NOTE.** R, as well as Python, is an interpreted programming language, and thus - for reasons of processing efficiency - not the best choice for a task like this. If you know Java, you might wish to take a look at the [Wikidata Toolkit (WDTK)](https://www.mediawiki.org/wiki/Wikidata_Toolkit) library As far as my knowledge goes, the WDTK framework is the fastest library available to process the Wikidata dumps. However, I will show you how you can have the newest Wikidata dump processed in R in much less than a day, a time frame acceptable for a majority of projects that would rely on a semantic knowledge base like Wikidata. Moreover, you can do this on your laptop.  
+
+**NOTE.** For Python people, here is a [similar approach from Aliakbar Akbaritabar (Ali)](https://akbaritabar.netlify.com/how_to_use_a_wikidata_dump). Ali was interested to learn if there is an efficient way to do it in R and then we got in touch before I developed this (essentialy simple, I think) approach. Many thanks to Ali for the inspiration!
+
+### 1.2 Approach
+
+Once again, the location of the Wikidata JSON dump:
+
+[https://dumps.wikimedia.org/wikidatawiki/entities/](https://dumps.wikimedia.org/wikidatawiki/entities/)
+and the file we need is the one of the latest dump: `latest-all.json.bz2`.
+
+Now, the [structure of the JSON dump](https://www.wikidata.org/wiki/Wikidata:Database_download/en#JSON_dumps_(recommended)):
+
+> JSON dumps containing all Wikidata entities in a single JSON array can be found under https://dumps.wikimedia.org/wikidatawiki/entities/. The entities in the array are not necessarily in any particular order, e.g., Q2 doesn't necessarily follow Q1. The dumps are being created on a weekly basis. [...]
+Hint: Each entity object (data item or property) is placed on a separate line in the JSON file, so the file can be read line by line, and each line can be decoded separately as an individual JSON object.
+
+Got it? The idea is: one line in the `latest-all.json.bz2` compressed file represents one Wikidata entity (item or property, nevermind the lexems at this point) and carries all associated data. So the outline of the dump processing approach would be:
+
+1. Download the compressed Wikidata JSON dump from [https://dumps.wikimedia.org/wikidatawiki/entities/](https://dumps.wikimedia.org/wikidatawiki/entities/) and note the directory on your local machine where it resides;
+
+2a. Open a connection to the `latest-all.json.bz2` dump file with the R `bzfile()` function;
+
+2b. Open a connection to some output file, somewhere where you want to store the processed data;
+
+3. Iterate across the dump, line by line, with `readLines()`: a `repeat` loop working until the actual line read is empty would serve us good in this respect;
+
+4. Use `fromJSON()` from the `{rsjon}` package to parse one JSON array (i.e. one line from the compressed dump file);
+
+5. Since `fromJSON()` will return an R `list`, find the component(s) that you are looking for (reminder: you should have studied the JSON data model first!);
+
+6. Use `writeLines()` to write the processed data as one line, with comma separated fields, so that your output file becomes a nicely readable `.csv` in the end;
+
+7. Close the file connections!
+
+In the following demonstration I will extract all items with English labels from the Wikidata JSON dump. 
+
+**Note 1.** On an Intel i7 (not the newest generation) + 32Gb or RAM this took approximately 10 hours.
+
+**Note 2.** Forget about 32 Gb or RAM info: this can be done on an average nowadays available laptop. The memory consumption is really low. 
+
+**Note 3.** *"I need to process several different data models from the Wikidata dump, it would take forever?"* Well, consider writing several R scripts and putting them on crontab... As I have already mentioned, your laptop can do it. Mind the number of cores/threads and how much RAM you need to spend: experimenting with these parameters is essential. But it would do. Yes, with your laptop.
+
+**Note 4.** In my experiments, the popular [{jsonlite}](https://cran.r-project.org/web/packages/jsonlite/index.html) package to parse JSON from R was beaten by an order of magnitude in terms of processing speed by [{rjson}](https://cran.r-project.org/web/packages/rjson/index.html) (published: `2018-06-08`, version 0.2.20), so please
+
+`install.packages('rjson')` before proceeding.
+
+### 1.3 Run (!)
+
+Setup:
+
+```{r echo = T, eval = F}
+# - setup
+library(rjson)
+
+# - dirTree
+# - you want to change the dumpDir, of course 
+dumpDir <- '/home/goran/Wikidata/dump/'
+dumpFile <- 'latest-all.json.bz2'
+outFile <- 'enlabels_processed.csv'
+```
+
+Run:
+
+```{r echo = T, eval = F}
+# - open connection to outFile
+conOut <- file(paste0(analyticsDir, outFile), 
+               open = "w", 
+               encoding = getOption("encoding"))
+
+# - extract English labels
+
+# - to dump directory
+setwd(dumpDir)
+
+# - open connection to dump
+con <- bzfile(description = dumpFile,
+              open = "r", 
+              encoding = getOption("encoding"), 
+              compression = 1)
+
+# - read initial line: "[" the beginning of the JSON array
+f <- readLines(con = con, 
+               n = 1, 
+               ok = FALSE, 
+               warn = TRUE,
+               encoding = "unknown", 
+               skipNul = FALSE)
+# - initiate counter
+c <- 0
+# - initiate timing
+t1 <- Sys.time()
+repeat {
+  # - counter
+  c <- c + 1
+  # - read one line from the dump
+  f <- readLines(con = con,
+                 n = 1,
+                 ok = FALSE,
+                 warn = TRUE,
+                 encoding = "unknown",
+                 skipNul = FALSE)
+  # - if the line is empty: break (EOF)
+  if (length(f) == 0) {
+    break
+    # - else: parse JSON
+  } else {
+    # - parse w. rjson::fromJSON, remove "," at the end of the line; 
+    # - defensive:
+    fjson <- tryCatch({
+      rjson::fromJSON(gsub(",$", "", f), 
+                      method = "C", 
+                      unexpected.escape = "skip",
+                      simplify = FALSE)
+      }, 
+      error = function(condition) {
+        FALSE
+      })
+    # - check if the JSON was parsed correctly
+    if (class(fjson) == "logical") {
+      next
+    }
+    # - if fjson$labels$en$value is not null: process and write data
+    if (!is.null(fjson$labels$en$value)) {
+      writeLines(paste0('"', fjson$id, '"', ",", '"',fjson$labels$en$value, '"'), conOut)
+    }
+  }
+  # - conditional report on 100,000 lines
+  if (c %% 100000 == 0) {
+    # - report
+    print(paste0("### --------------------------- PING!: 100,000:  ", c))
+    print(paste0("This took: ", difftime(Sys.time(), t1, units = "mins"), " minutes."))
+  }
+}
+# - close file connections
+close(con)
+close(conOut)
+
+# - final reporting
+print("-------------------------------------------------------")
+print(paste0("Job started: ", as.character(t1)))
+print(paste0("Total job time: ", difftime(Sys.time(), t1, units = "mins"), " minutes."))
+print(paste0("Total job time: ", difftime(Sys.time(), t1, units = "hours"), " hours."))
+print("-------------------------------------------------------")
+```
+
+**Note.** The execution was halted after the first 1,000,000 items were processed; that took slightly more than 10 minutes. Wikidata currently (June 2020) has around 87,000,000 items.
+
+Load the processed data:
+
+```{r echo = T, eval = T}
+# - check
+dataSet <- read.csv(paste0(analyticsDir, outFile),
+                    header = F,
+                    stringsAsFactors = F)
+colnames(dataSet) <- c('Item', 'Label')
+tail(dataSet, 100)
+```
+
+
+
+## Resources
+
+- [Wikibase/DataModel/Primer](https://www.mediawiki.org/wiki/Wikibase/DataModel/Primer) - **very important**: you will not be able to utilize Wikidata up to its full potential if you do not study the data model thoroughly. Reminder: while [Wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page) is a data set (items + ontology), [Wikibase](https://wikiba.se/) is a MediaWiki extension running it.  
+- [Wikibase JSON Data Model](https://www.mediawiki.org/wiki/Wikibase/DataModel/JSON) - very important for understanding the results that you get from the API, the WDQS, and in any attempt to process the Wikidata dump - because you will be mainly doing it through the JSON serialization.
+- [Wikidata Dumps](https://www.wikidata.org/wiki/Wikidata:Database_download): you want JSON, of course.
+
+
+***
+Goran S. Milovanović, Phd
+
+DataKolektiv, 2020.
+
+contact: goran.milovanovic@datakolektiv.com
+
+[![](img/DK_Logo_100.png)](https://www.datakolektiv.com)
+
+***
+License: [GPLv3](http://www.gnu.org/licenses/gpl-3.0.txt)
+This Notebook is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+This Notebook is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+You should have received a copy of the GNU General Public License along with this Notebook. If not, see <http://www.gnu.org/licenses/>.
+
+***
+
+
