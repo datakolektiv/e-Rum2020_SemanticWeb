@@ -200,11 +200,16 @@ car_triples$object <- sapply(car_triples$object,
                                  return(paste0('"', x, '"', '^^', '<http://www.w3.org/2001/XMLSchema#string>'))
                                }
                              })
-head(
-  data.frame(
-    object = car_triples$object, 
-    stringsAsFactors = F), 
-  10)
+print(data.frame(
+  object = car_triples$object,
+  stringsAsFactors = F)
+  )
+```
+
+The current representation of `mtcars` is:
+
+```{r echo = T, message = F}
+print(car_triples)
 ```
 
 Let's simplify the representation by introducing _prefixes_: `xsd` for `http://www.w3.org/2001/XMLSchema` and `erum2020mtcars` for `http://e-rum2020_example.com/mtcars`: `car_triples_prefixed`.
@@ -283,11 +288,10 @@ triplestore <- rdf()
 Now we use `rdf_add()` to add subjects, objects, and predicates - the triples - to our `triplestore` triplestore:
 
 ```{r echo = T, message = F}
-prefix_mtcars <- "http://e-rum2020_example.com/mtcars#"
 # - add one triple
 triplestore %>% 
-  rdf_add(subject = paste0(prefix_mtcars, car_triples$subject[1]), 
-          predicate = paste0(prefix_mtcars, car_triples$predicate[1]), 
+  rdf_add(subject = car_triples$subject[1], 
+          predicate = car_triples$predicate[1], 
           object = car_triples$object[1])
 print(triplestore)
 ```
@@ -297,8 +301,8 @@ We have just added one single triple to `triplestore`. Let's add another one:
 ```{r echo = T, message = F}
 # - add another one
 triplestore %>% 
-  rdf_add(subject = paste0(prefix_mtcars, car_triples$subject[2]), 
-          predicate = paste0(prefix_mtcars, car_triples$predicate[2]), 
+  rdf_add(subject = car_triples$subject[2], 
+          predicate = car_triples$predicate[2], 
           object = car_triples$object[2])
 print(triplestore)
 ```
@@ -324,6 +328,8 @@ head(mtcars_0, 10)
 and populate a new `triplestore`:
 
 ```{r echo = T, message = F}
+# - introduce prefix
+prefix_mtcars <- "http://e-rum2020_example.com/mtcars#"
 # - init an rdf object
 triplestore <- rdf()
 # - use as_rdf()
@@ -641,6 +647,7 @@ ggplot(total_revenues, aes(x = year,
   theme(panel.border = element_blank()) + 
   theme(axis.text.x = element_text(angle = 90))
 ```
+
 We can obtain the same from a smarter SPARQL query:
 
 ```{r echo = T, message = F}
