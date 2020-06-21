@@ -91,7 +91,6 @@ Install {visNetwork} for graph visualizations using [vis.js](http://visjs.org/) 
 dataDir <- '../_data/'
 queryDir <- '../_queries/'
 analyticsDir <- '../_analytics/' 
-
 ```
 
 ## 1. Processing the Wikidata JSON Dump from R
