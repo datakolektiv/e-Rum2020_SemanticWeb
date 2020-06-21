@@ -94,7 +94,7 @@ analyticsDir <- '../_analytics/'
 
 ```
 
-## 1. Accessing Wikidata from R: the API and its R client library for Wikidata
+## 1. Processing the Wikidata JSON Dump from R
 
 First you probably want to take a look at [Wikidata:Database_download](https://www.wikidata.org/wiki/Wikidata:Database_download):
 
@@ -299,5 +299,4 @@ This Notebook is distributed in the hope that it will be useful, but WITHOUT ANY
 You should have received a copy of the GNU General Public License along with this Notebook. If not, see <http://www.gnu.org/licenses/>.
 
 ***
-
 

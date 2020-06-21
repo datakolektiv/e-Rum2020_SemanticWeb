@@ -520,8 +520,8 @@ How to `SELECT * FROM ...`: reconstruct the `mtcars` data.frame in triplestore r
 
 ```{r echo = T, message = F}
 sparqlQuery <-
-  'SELECT ?subject ?predicate ?object 
-    WHERE {?subject ?predicate ?object .}'
+  'SELECT ?s ?p ?p 
+    WHERE {?s ?p ?o .}'
 res <- rdf_query(triplestore,
                  query = sparqlQuery,
                  data.frame = T)
